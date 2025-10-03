@@ -32,9 +32,9 @@
   <meta property="og:title" content="Digital Bytes | Blockchain & Digital Asset Insights by TeamBlockchain">
   <meta property="og:description"
     content="Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain. Stay updated with the latest trends, podcasts, and expert commentary.">
-  <meta property="og:image" content="https://www.teamblockchain.net/img/webp/logo-tbchain2.webp">
-  <meta property="og:image:secure_url" content="https://www.teamblockchain.net/img/webp/logo-tbchain2.webp">
-  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image" content="https://www.teamblockchain.net/img/teamblockchain_hero.png">
+  <meta property="og:image:secure_url" content="https://www.teamblockchain.net/img/teamblockchain_hero.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="TeamBlockchain Digital Bytes - Blockchain and Digital Asset Insights">
@@ -49,7 +49,7 @@
   <meta name="twitter:title" content="Digital Bytes | Blockchain & Digital Asset Insights by TeamBlockchain">
   <meta name="twitter:description"
     content="Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain. Stay updated with the latest trends, podcasts, and expert commentary.">
-  <meta name="twitter:image" content="https://www.teamblockchain.net/img/webp/logo-tbchain2.webp">
+  <meta name="twitter:image" content="https://www.teamblockchain.net/img/teamblockchain_hero.png">
   <meta name="twitter:image:alt" content="TeamBlockchain Digital Bytes - Blockchain and Digital Asset Insights">
 
   <!-- Structured Data: Organization & Website -->
@@ -391,7 +391,10 @@
                 <li class="mb-2"><a href="legal/privacy.html" class="link-fancy link-fancy-light">Privacy Policy</a></li>
                 <li class="mb-2"><a href="legal/tos.html" class="link-fancy link-fancy-light">Terms of Service</a></li>
                 <li class="mb-2"><a href="legal/cookies.html" class="link-fancy link-fancy-light">Cookies</a></li>
-                <li class="mb-2"><a href="legal/legal.html" class="link-fancy link-fancy-light">Legal</a></li>
+                <li class="mb-2"><a href="legal/gdpr.html" class="link-fancy link-fancy-light">GDPR</a></li>
+                <li class="mb-2"><a href="legal/us-privacy.html" class="link-fancy link-fancy-light">US Privacy Rights</a></li>
+                <li class="mb-2"><a href="legal/esg.html" class="link-fancy link-fancy-light">ESG</a></li>
+                <li class="mb-2"><a href="legal/legal.html" class="link-fancy link-fancy-light">Legal Disclaimer</a></li>
               </ul>
             </nav>
           </div>
@@ -566,4 +569,207 @@
         podcastContainer.innerHTML = '<p class="text-secondary">Failed to load podcast episodes.</p>';
       });
   });
+</script>
+
+<!-- GDPR Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner" style="display: none;">
+  <div class="cookie-banner-content">
+    <div class="cookie-banner-text">
+      <p class="mb-2">
+        <strong>🍪 We value your privacy</strong>
+      </p>
+      <p class="small mb-0">
+        We use essential cookies to ensure our website works properly. We do not use tracking cookies or sell your data. 
+        <a href="legal/cookies.html" class="cookie-link">Learn more</a> | 
+        <a href="legal/privacy.html" class="cookie-link">Privacy Policy</a> | 
+        <a href="legal/gdpr.html" class="cookie-link">GDPR Rights</a>
+      </p>
+    </div>
+    <div class="cookie-banner-actions">
+      <button id="cookie-accept" class="cookie-btn cookie-btn-accept" aria-label="Accept cookies">Accept</button>
+      <button id="cookie-decline" class="cookie-btn cookie-btn-decline" aria-label="Decline non-essential cookies">Decline</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-top: 2px solid #5746e3;
+  padding: 1rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cookie-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cookie-banner-text {
+  flex: 1;
+  min-width: 250px;
+  color: #f5f5f5;
+}
+
+.cookie-banner-text p {
+  margin: 0;
+}
+
+.cookie-link {
+  color: #5746e3;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.cookie-link:hover {
+  color: #7d6ef5;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cookie-btn-accept {
+  background: #5746e3;
+  color: #fff;
+}
+
+.cookie-btn-accept:hover {
+  background: #6d5df5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(87, 70, 227, 0.4);
+}
+
+.cookie-btn-decline {
+  background: transparent;
+  color: #f5f5f5;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn-decline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .cookie-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cookie-banner-actions {
+    width: 100%;
+  }
+  
+  .cookie-btn {
+    flex: 1;
+  }
+}
+</style>
+
+<script>
+// GDPR Cookie Consent Manager
+(function() {
+  const COOKIE_NAME = 'tb_cookie_consent';
+  const COOKIE_DURATION = 365; // days
+  
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+  
+  function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = `expires=${date.toUTCString()}`;
+    document.cookie = `${name}=${value};${expires};path=/;SameSite=Strict;Secure`;
+  }
+  
+  function showBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.style.display = 'block';
+    }
+  }
+  
+  function hideBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.style.display = 'none';
+    }
+  }
+  
+  function handleConsent(accepted) {
+    setCookie(COOKIE_NAME, accepted ? 'accepted' : 'declined', COOKIE_DURATION);
+    hideBanner();
+    
+    // Log consent for transparency
+    console.log(`Cookie consent: ${accepted ? 'Accepted' : 'Declined'}`);
+    
+    // If you add analytics in the future, initialize them here only if accepted
+    if (accepted) {
+      // Future: Initialize analytics here
+      // Example: initializeAnalytics();
+    }
+  }
+  
+  // Check if user has already made a choice
+  const consent = getCookie(COOKIE_NAME);
+  
+  if (!consent) {
+    // Show banner after a short delay for better UX
+    setTimeout(showBanner, 1000);
+  }
+  
+  // Event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => handleConsent(true));
+    }
+    
+    if (declineBtn) {
+      declineBtn.addEventListener('click', () => handleConsent(false));
+    }
+  });
+})();
 </script>
