@@ -1,0 +1,623 @@
+<!doctype html>
+<html class="h-100" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="Digital Bytes: Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain. Stay updated with the latest trends, podcasts, and expert commentary.">
+  <meta name="keywords"
+    content="blockchain, digital assets, crypto, cryptocurrency, newsletter, podcast, analysis, news, TeamBlockchain, digital bytes, bitcoin, ethereum, stablecoins, fintech, web3, DeFi, digital transformation, technology, finance, insights, trends, radio show">
+  <meta name="author" content="TeamBlockchain">
+  <meta name="robots" content="index, follow">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="theme-color" content="#000000">
+  <meta name="language" content="en">
+  <link rel="canonical" href="https://www.teamblockchain.net/">
+  <title>Digital Bytes | Blockchain & Digital Asset Insights by TeamBlockchain</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.teamblockchain.net/">
+  <meta property="og:title" content="Digital Bytes | Blockchain & Digital Asset Insights by TeamBlockchain">
+  <meta property="og:description"
+    content="Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain. Stay updated with the latest trends, podcasts, and expert commentary.">
+  <meta property="og:image" content="https://www.teamblockchain.net/img/webp/logo-tbchain2.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.teamblockchain.net/">
+  <meta name="twitter:title" content="Digital Bytes | Blockchain & Digital Asset Insights by TeamBlockchain">
+  <meta name="twitter:description"
+    content="Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain. Stay updated with the latest trends, podcasts, and expert commentary.">
+  <meta name="twitter:image" content="https://www.teamblockchain.net/img/webp/logo-tbchain2.webp">
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TeamBlockchain",
+    "url": "https://www.teamblockchain.net/",
+    "logo": "https://www.teamblockchain.net/img/webp/logo-tbchain2.webp",
+    "sameAs": [
+      "https://www.linkedin.com/company/teamblockchain/",
+      "https://twitter.com/teamblockchain",
+      "https://digitalbytes.substack.com/"
+    ],
+    "description": "Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain."
+  }
+  </script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+
+  <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/custom-theme.css">
+  <link rel="stylesheet" href="css/custom-accessibility.css">
+  <style>
+    /* Additional custom styles for the redesigned layout */
+    .hero-section {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('img/webp/abstract12.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .cta-box:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+    }
+
+    .podcast-card {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .podcast-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .article-card {
+      background: #1a1a1a;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      height: 100%;
+    }
+
+    .article-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .article-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .article-content {
+      padding: 2rem;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+      color: #000000;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary-custom:hover {
+      background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+      color: #000000;
+    }
+
+    .newsletter-signup {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-radius: 30px;
+      padding: 4rem 2rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .substack-embed-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .substack-embed-container iframe {
+      border-radius: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.95) !important;
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .hero-section {
+        min-height: 70vh;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+  <a href="#main-content" class="visually-hidden-focusable skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0" role="navigation"
+    aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html"
+        style="display: flex; align-items: center;">
+        <img src="img/webp/logo-tbchain2.webp" alt="TeamBlockchain logo"
+          style="height:64px; width:auto; margin-right:12px; background:transparent;">
+      </a>
+
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#newsletter" aria-label="Newsletter section">Newsletter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#podcast" aria-label="Podcast section">Podcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#about" aria-label="About section">About</a>
+        </li>
+      </ul>
+      <a href="https://digitalbytes.substack.com/" target="_blank" aria-label="Read Our Substack"
+        class="btn btn-outline-light">
+        <small>Read on Substack</small>
+      </a>
+    </div>
+  </nav>
+
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-content">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+            <span class="h5 text-secondary fw-lighter mb-3 d-block">Welcome to</span>
+            <h1 class="display-1 fw-bold mb-4" style="font-size: clamp(3rem, 8vw, 6rem);">Digital Bytes</h1>
+            <p class="lead fs-3 mb-5 text-secondary">Your weekly dose of blockchain insights, analysis, and expert
+              commentary</p>
+
+            <div class="row g-4 mt-5">
+              <div class="col-md-6">
+                <div class="cta-box">
+                  <div class="feature-icon mx-auto">📰</div>
+                  <h3 class="h4 mb-3">Newsletter</h3>
+                  <p class="text-secondary mb-4">In-depth analysis of blockchain and digital assets delivered weekly</p>
+                  <a href="#newsletter" class="btn-primary-custom">Read Articles</a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cta-box">
+                  <div class="feature-icon mx-auto">🎙️</div>
+                  <h3 class="h4 mb-3">Podcast</h3>
+                  <p class="text-secondary mb-4">Listen to expert discussions on the latest blockchain developments</p>
+                  <a href="#podcast" class="btn-primary-custom">Listen Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="py-vh-5 bg-black" id="newsletter">
+      <div class="container px-vw-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <div class="newsletter-signup text-center">
+              <span class="h5 text-secondary fw-lighter">Stay Informed</span>
+              <h2 class="section-title display-4 mt-3 mb-4">Subscribe to Digital Bytes</h2>
+              <p class="lead text-secondary mb-4 col-lg-8 mx-auto">
+                Get full access to our newsletter and stay updated on how, why, and where blockchain technology and
+                digital assets are being used across various jurisdictions and industries globally.
+              </p>
+
+              <div class="substack-embed-container">
+                <iframe src="https://digitalbytes.substack.com/embed" width="480" height="150"
+                  style="border:1px solid #EEE; background:white; overflow:hidden;" frameborder="0" scrolling="no"
+                  title="Subscribe to Digital Bytes on Substack"></iframe>
+              </div>
+
+              <p class="mt-4 text-secondary small">
+                <a href="https://digitalbytes.substack.com/" target="_blank" class="link-fancy link-fancy-light">View
+                  all articles on Substack →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Articles Section -->
+    <section class="py-vh-5 bg-dark" id="articles">
+      <div class="container px-vw-5">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <span class="h5 text-secondary fw-lighter">Latest Insights</span>
+            <h2 class="section-title display-4 mt-3">Featured Articles</h2>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12">
+            <div id="substack-articles" class="row g-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Podcast Section -->
+    <section class="py-vh-5 bg-black" id="podcast">
+      <div class="container px-vw-5">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <span class="h5 text-secondary fw-lighter">Listen & Learn</span>
+            <h2 class="section-title display-4 mt-3">Digital Bytes Podcast</h2>
+            <p class="lead text-secondary mt-4 col-lg-8 mx-auto">
+              Tune in to our weekly radio show featuring expert discussions, interviews, and analysis of the latest
+              developments in blockchain and digital assets.
+            </p>
+          </div>
+        </div>
+
+        <!-- Podcast Episodes will be loaded here by JavaScript -->
+        <div id="podcast-episodes"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-vh-5 bg-dark" id="about">
+      <div class="container px-vw-5">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6">
+            <div class="position-relative">
+              <img src="img/webp/jonny_fry_ceo-2.webp" alt="Jonny Fry, CEO" class="img-fluid rounded-5 shadow-lg">
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <span class="h5 text-secondary fw-lighter">About TeamBlockchain</span>
+            <h2 class="section-title display-4 mt-3 mb-4">Expert Analysis & Insights</h2>
+            <p class="lead text-secondary mb-4">
+              TeamBlockchain provides comprehensive analysis and updates about developments in blockchain technology and
+              digital assets sectors. Our mission is to deliver clear, insightful, and actionable information to help
+              you navigate the rapidly evolving world of digital innovation.
+            </p>
+            <p class="text-secondary mb-4">
+              Through our weekly newsletter and podcast, we explore how, why, and where blockchain technology and
+              digital assets are being implemented across various jurisdictions and industries globally. Our expert
+              commentary helps you stay ahead of the curve in this transformative space.
+            </p>
+            <div class="mt-5">
+              <h3 class="h5 mb-3">What We Cover:</h3>
+              <ul class="list-unstyled text-secondary">
+                <li class="mb-2">✓ Blockchain technology developments</li>
+                <li class="mb-2">✓ Digital asset market analysis</li>
+                <li class="mb-2">✓ Regulatory updates and compliance</li>
+                <li class="mb-2">✓ Industry trends and innovations</li>
+                <li class="mb-2">✓ Expert interviews and commentary</li>
+              </ul>
+            </div>
+            <div class="mt-5">
+              <a href="https://digitalbytes.substack.com/" target="_blank" class="btn-primary-custom me-3">Subscribe
+                Now</a>
+              <a href="https://www.linkedin.com/company/teamblockchain/" target="_blank"
+                class="link-fancy link-fancy-light">Connect on LinkedIn →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-vh-5 bg-black">
+      <div class="container px-vw-5">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="display-3 mb-4">Stay Ahead of the Curve</h2>
+            <p class="lead text-secondary mb-5">
+              Join thousands of professionals who rely on Digital Bytes for their weekly blockchain and digital asset
+              insights.
+            </p>
+            <div class="substack-embed-container">
+              <iframe src="https://digitalbytes.substack.com/embed" width="480" height="150"
+                style="border:1px solid #EEE; background:white; overflow:hidden;" frameborder="0" scrolling="no"
+                title="Subscribe to Digital Bytes on Substack"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-5 border-top border-secondary">
+      <div class="container px-vw-5">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <img src="img/webp/logo-tbchain2.webp" alt="TeamBlockchain logo"
+              style="height:48px; width:auto; margin-bottom:1rem;">
+            <p class="text-secondary small">
+              Digital Bytes: Your trusted source for blockchain and digital asset insights.
+            </p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <h5 class="mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#newsletter" class="text-secondary text-decoration-none">Newsletter</a></li>
+              <li class="mb-2"><a href="#podcast" class="text-secondary text-decoration-none">Podcast</a></li>
+              <li class="mb-2"><a href="#about" class="text-secondary text-decoration-none">About</a></li>
+              <li class="mb-2"><a href="https://digitalbytes.substack.com/archive" target="_blank"
+                  class="text-secondary text-decoration-none">Archive</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <h5 class="mb-3">Connect</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="https://digitalbytes.substack.com/" target="_blank"
+                  class="text-secondary text-decoration-none">Substack</a></li>
+              <li class="mb-2"><a href="https://www.linkedin.com/company/teamblockchain/" target="_blank"
+                  class="text-secondary text-decoration-none">LinkedIn</a></li>
+              <li class="mb-2"><a href="https://twitter.com/teamblockchain" target="_blank"
+                  class="text-secondary text-decoration-none">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-5 pt-4 border-top border-secondary">
+          <div class="col-12 text-center">
+            <p class="text-secondary small mb-0">
+              © 2025 TeamBlockchain. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    async function loadSubstackPosts() {
+      try {
+        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://digitalbytes.substack.com/feed');
+        const data = await response.json();
+
+        const container = document.getElementById('substack-articles');
+        const posts = data.items.slice(0, 6); // Get first 6 posts
+
+        posts.forEach(post => {
+          // Extract image from content or use a placeholder
+          let imageUrl = 'img/webp/abstract17.webp'; // Default placeholder image
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(post.content, 'text/html');
+          const imgElement = doc.querySelector('img');
+          if (imgElement && imgElement.src) {
+            imageUrl = imgElement.src;
+          }
+
+          const article = `
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="article-card">
+                <img src="${imageUrl}" alt="${post.title}">
+                <div class="article-content">
+                  <h3 class="h4 mb-3">${post.title}</h3>
+                  <p class="text-secondary mb-4">${post.description ? post.description.substring(0, 150) + '...' : ''}</p>
+                  <a href="${post.link}" target="_blank" class="link-fancy link-fancy-light">Read more →</a>
+                </div>
+              </article>
+            </div>
+          `;
+          container.innerHTML += article;
+        });
+      } catch (error) {
+        console.error('Error loading Substack posts:', error);
+        // Optionally display a message to the user or fallback content
+        document.getElementById('substack-articles').innerHTML = '<p class="text-center text-secondary">Could not load latest articles. Please visit our <a href="https://digitalbytes.substack.com/" target="_blank" class="link-fancy link-fancy-light">Substack page</a> directly.</p>';
+      }
+    }
+
+    // Load posts when page loads
+    document.addEventListener('DOMContentLoaded', loadSubstackPosts);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    // Navbar scroll effect
+    let scrollpos = window.scrollY;
+    const header = document.querySelector(".navbar");
+    const header_height = header.offsetHeight;
+    const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm");
+    const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm");
+
+    window.addEventListener('scroll', function () {
+      scrollpos = window.scrollY;
+      if (scrollpos >= header_height) {
+        add_class_on_scroll();
+      } else {
+        remove_class_on_scroll();
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - header_height;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</body>
+
+</html>
+<script>
+  // Fetch and display latest podcast episodes from Cloudflare Worker (replace URL with your Worker endpoint)
+  document.addEventListener('DOMContentLoaded', function () {
+    const workerUrl = 'https://your-worker-url.workers.dev'; // <-- Replace with your deployed Worker URL
+    const podcastContainer = document.getElementById('podcast-episodes');
+    if (!podcastContainer) return;
+
+    fetch(workerUrl)
+      .then(response => response.json())
+      .then(data => {
+        if (!data.items || !data.items.length) {
+          podcastContainer.innerHTML = '<p class="text-secondary">No episodes found.</p>';
+          return;
+        }
+
+        // Featured (latest) episode
+        const latest = data.items[0];
+        let html = `<div class="row justify-content-center mb-5">
+          <div class="col-12 col-lg-10">
+            <div class="podcast-card">
+              <h3 class="h4 mb-4 text-center">Latest Episode</h3>
+              <audio controls style="width:100%;">
+                <source src="${latest.enclosure}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <h4 class="h5 mt-3">${latest.title}</h4>
+              <p class="text-secondary">${latest.pubDate ? new Date(latest.pubDate).toLocaleDateString() : ''}</p>
+              <p>${latest.description || ''}</p>
+              <a href="${latest.link}" target="_blank">Episode Page →</a>
+            </div>
+          </div>
+        </div>`;
+
+        // Recent episodes (next 3)
+        html += '<div class="row g-4">';
+        for (let i = 1; i < Math.min(4, data.items.length); i++) {
+          const ep = data.items[i];
+          html += `<div class="col-12 col-md-6 col-lg-3">
+            <div class="podcast-card">
+              <audio controls style="width:100%;">
+                <source src="${ep.enclosure}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <h5 class="h6 mt-2">${ep.title}</h5>
+              <p class="text-secondary">${ep.pubDate ? new Date(ep.pubDate).toLocaleDateString() : ''}</p>
+              <a href="${ep.link}" target="_blank">Episode Page →</a>
+            </div>
+          </div>`;
+        }
+        html += '</div>';
+        podcastContainer.innerHTML = html;
+      })
+      .catch(() => {
+        podcastContainer.innerHTML = '<p class="text-secondary">Failed to load podcast episodes.</p>';
+      });
+  });
+</script>

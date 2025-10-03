@@ -1,0 +1,54 @@
+/* Custom accessibility and focus styles moved from index.html */
+
+.visually-hidden-focusable:not(:focus):not(:active) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+.visually-hidden-focusable:focus, .visually-hidden-focusable:active {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  border-radius: 4px;
+  background: #5746e3;
+  color: #fff;
+  outline: 2px solid #fff;
+  z-index: 1000;
+}
+.img-face:focus {
+  outline: 3px solid #5746e3 !important;
+  outline-offset: 2px;
+  z-index: 10;
+}
+
+/* Skip link focus/visibility styles */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 1000;
+  background: #5746e3;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  outline: none;
+  transition: left 0.2s;
+}
+.skip-link:focus {
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
