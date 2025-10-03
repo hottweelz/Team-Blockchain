@@ -1,0 +1,53 @@
+# Cloudflare Pages _headers file
+# This file controls HTTP headers for static assets
+# Documentation: https://developers.cloudflare.com/pages/platform/headers/
+
+# Cache podcast MP3 files from CloudFront for 7 days (604800 seconds)
+# Podcasts are updated weekly, so this reduces repeated requests
+/*.mp3
+  Cache-Control: public, max-age=604800, immutable
+  X-Content-Type-Options: nosniff
+
+# Cache images for 30 days
+/img/*
+  Cache-Control: public, max-age=2592000, immutable
+  X-Content-Type-Options: nosniff
+
+/img/webp/*
+  Cache-Control: public, max-age=2592000, immutable
+  X-Content-Type-Options: nosniff
+
+# Cache fonts for 1 year
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# Cache CSS for 7 days
+/css/*
+  Cache-Control: public, max-age=604800
+  X-Content-Type-Options: nosniff
+
+# Main HTML - short cache with revalidation
+/index.html
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Legal pages - cache for 1 day
+/legal/*
+  Cache-Control: public, max-age=86400, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+
+# robots.txt - cache for 1 day
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Global security headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=()
