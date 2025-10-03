@@ -149,6 +149,117 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/custom-theme.css">
   <link rel="stylesheet" href="css/custom-accessibility.css">
+
+  <style>
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-top: 2px solid #5746e3;
+      padding: 1rem;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      animation: slideUp 0.4s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .cookie-banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cookie-banner-text {
+      flex: 1;
+      min-width: 250px;
+      color: #f5f5f5;
+    }
+
+    .cookie-banner-text p {
+      margin: 0;
+    }
+
+    .cookie-link {
+      color: #5746e3;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    .cookie-link:hover {
+      color: #7d6ef5;
+    }
+
+    .cookie-banner-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .cookie-btn {
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .cookie-btn-accept {
+      background: #5746e3;
+      color: #fff;
+    }
+
+    .cookie-btn-accept:hover {
+      background: #6d5df5;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(87, 70, 227, 0.4);
+    }
+
+    .cookie-btn-decline {
+      background: transparent;
+      color: #f5f5f5;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cookie-btn-decline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .cookie-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cookie-banner-actions {
+        width: 100%;
+      }
+
+      .cookie-btn {
+        flex: 1;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll" style="padding-top: 76px;">
@@ -156,7 +267,7 @@
 
   <!-- Navigation -->
   <nav id="navScroll" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top px-vw-5" tabindex="0"
-    role="navigation" aria-label="Main navigation">
+    aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand pe-md-4 fs-5" href="index.html" style="display: flex; align-items: center;">
         <img src="img/webp/logo-tbchain2.webp" alt="TeamBlockchain logo"
@@ -190,7 +301,7 @@
     </div>
   </nav>
 
-  <main id="main-content" role="main" aria-label="Main content">
+  <main id="main-content" aria-label="Main content">
     <!-- Hero Section -->
     <section class="hero-section" id="home" aria-labelledby="hero-heading">
       <div class="container hero-content">
@@ -240,7 +351,7 @@
 
               <div class="substack-embed-container">
                 <iframe src="https://digitalbytes.substack.com/embed" width="480" height="150"
-                  style="border:1px solid #EEE; background:white; overflow:hidden;" frameborder="0" scrolling="no"
+                  style="border:1px solid #EEE; background:white; overflow:hidden;"
                   title="Subscribe to Digital Bytes on Substack" loading="lazy"></iframe>
               </div>
 
@@ -338,8 +449,16 @@
     </section>
 
     <!-- CTA Boxes Section -->
-    <section class="py-vh-5 bg-dark">
+    <section class="py-vh-5 bg-dark" aria-labelledby="team-heading">
       <div class="container px-vw-5">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 id="team-heading" class="section-title display-4">Meet Our Team</h2>
+            <p class="lead text-secondary mt-4 col-lg-8 mx-auto">
+              Our expert team brings deep knowledge and insights to help you navigate the blockchain landscape.
+            </p>
+          </div>
+        </div>
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10">
             <div class="row g-4 mb-5">
@@ -408,7 +527,7 @@
             </p>
             <div class="substack-embed-container">
               <iframe src="https://digitalbytes.substack.com/embed" width="480" height="150"
-                style="border:1px solid #EEE; background:white; overflow:hidden;" frameborder="0" scrolling="no"
+                style="border:1px solid #EEE; background:white; overflow:hidden;"
                 title="Subscribe to Digital Bytes on Substack" loading="lazy"></iframe>
             </div>
           </div>
@@ -417,7 +536,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark py-5 border-top border-secondary" role="contentinfo">
+    <footer class="bg-dark py-5 border-top border-secondary">
       <div class="container px-vw-5">
         <div class="row g-4">
           <div class="col-12 col-md-6 col-lg-3">
@@ -578,49 +697,47 @@
     });
   </script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</body>
 
-</html>
-<script>
-  // Lazy load podcast episodes using Intersection Observer
-  document.addEventListener('DOMContentLoaded', function () {
-    const podcastContainer = document.getElementById('podcast-episodes');
-    if (!podcastContainer) return;
+  <script>
+    // Lazy load podcast episodes using Intersection Observer
+    document.addEventListener('DOMContentLoaded', function () {
+      const podcastContainer = document.getElementById('podcast-episodes');
+      if (!podcastContainer) return;
 
-    let episodesLoaded = false;
+      let episodesLoaded = false;
 
-    // Helper function to add link-fancy classes to all links in HTML content
-    function stylizeLinks(htmlContent) {
-      if (!htmlContent) return '';
-      const div = document.createElement('div');
-      div.innerHTML = htmlContent;
-      const links = div.querySelectorAll('a');
-      links.forEach(link => {
-        link.classList.add('link-fancy', 'link-fancy-light');
-      });
-      return div.innerHTML;
-    }
+      // Helper function to add link-fancy classes to all links in HTML content
+      function stylizeLinks(htmlContent) {
+        if (!htmlContent) return '';
+        const div = document.createElement('div');
+        div.innerHTML = htmlContent;
+        const links = div.querySelectorAll('a');
+        links.forEach(link => {
+          link.classList.add('link-fancy', 'link-fancy-light');
+        });
+        return div.innerHTML;
+      }
 
-    function loadPodcastEpisodes() {
-      if (episodesLoaded) return;
-      episodesLoaded = true;
+      function loadPodcastEpisodes() {
+        if (episodesLoaded) return;
+        episodesLoaded = true;
 
-      // Show loading state
-      podcastContainer.innerHTML = '<p class="text-secondary text-center">Loading episodes...</p>';
+        // Show loading state
+        podcastContainer.innerHTML = '<p class="text-secondary text-center">Loading episodes...</p>';
 
-      const workerUrl = 'https://teamblockchain.cyberfm.workers.dev/api/podcast';
+        const workerUrl = 'https://teamblockchain.cyberfm.workers.dev/api/podcast';
 
-      fetch(workerUrl)
-        .then(response => response.json())
-        .then(data => {
-          if (!data.items || !data.items.length) {
-            podcastContainer.innerHTML = '<p class="text-secondary">No episodes found.</p>';
-            return;
-          }
+        fetch(workerUrl)
+          .then(response => response.json())
+          .then(data => {
+            if (!data.items || !data.items.length) {
+              podcastContainer.innerHTML = '<p class="text-secondary">No episodes found.</p>';
+              return;
+            }
 
-          // Featured (latest) episode
-          const latest = data.items[0];
-          let html = `<div class="row justify-content-center mb-5">
+            // Featured (latest) episode
+            const latest = data.items[0];
+            let html = `<div class="row justify-content-center mb-5">
             <div class="col-12 col-lg-10">
               <div class="podcast-card">
                 <h3 class="h4 mb-4 text-center">Latest Episode</h3>
@@ -636,11 +753,11 @@
             </div>
           </div>`;
 
-          // Recent episodes (next 4)
-          html += '<div class="row g-4">';
-          for (let i = 1; i < Math.min(5, data.items.length); i++) {
-            const ep = data.items[i];
-            html += `<div class="col-12 col-md-6 col-lg-3">
+            // Recent episodes (next 4)
+            html += '<div class="row g-4">';
+            for (let i = 1; i < Math.min(5, data.items.length); i++) {
+              const ep = data.items[i];
+              html += `<div class="col-12 col-md-6 col-lg-3">
               <div class="podcast-card">
                 <audio controls style="width:100%;">
                   <source src="${ep.enclosure}" type="audio/mpeg">
@@ -651,237 +768,131 @@
                 <a href="${ep.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
               </div>
             </div>`;
+            }
+            html += '</div>';
+            podcastContainer.innerHTML = html;
+          })
+          .catch(() => {
+            podcastContainer.innerHTML = '<p class="text-secondary">Failed to load podcast episodes.</p>';
+          });
+      }
+
+      // Use Intersection Observer to load episodes when section comes into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadPodcastEpisodes();
+            observer.unobserve(entry.target); // Stop observing after loading
           }
-          html += '</div>';
-          podcastContainer.innerHTML = html;
-        })
-        .catch(() => {
-          podcastContainer.innerHTML = '<p class="text-secondary">Failed to load podcast episodes.</p>';
         });
-    }
-
-    // Use Intersection Observer to load episodes when section comes into view
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          loadPodcastEpisodes();
-          observer.unobserve(entry.target); // Stop observing after loading
-        }
+      }, {
+        rootMargin: '100px' // Start loading 100px before the section is visible
       });
-    }, {
-      rootMargin: '100px' // Start loading 100px before the section is visible
+
+      // Observe the podcast section
+      const podcastSection = document.getElementById('podcast');
+      if (podcastSection) {
+        observer.observe(podcastSection);
+      }
     });
+  </script>
 
-    // Observe the podcast section
-    const podcastSection = document.getElementById('podcast');
-    if (podcastSection) {
-      observer.observe(podcastSection);
-    }
-  });
-</script>
-
-<!-- GDPR Cookie Consent Banner -->
-<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner"
-  style="display: none;">
-  <div class="cookie-banner-content">
-    <div class="cookie-banner-text">
-      <p class="mb-2">
-        <strong>🍪 We value your privacy</strong>
-      </p>
-      <p class="small mb-0">
-        We use essential cookies to ensure our website works properly. We do not use tracking cookies or sell your data.
-        <a href="legal/cookies.html" class="cookie-link">Learn more about our cookie policy</a> |
-        <a href="legal/privacy.html" class="cookie-link">Privacy Policy</a> |
-        <a href="legal/gdpr.html" class="cookie-link">GDPR Rights</a>
-      </p>
-    </div>
-    <div class="cookie-banner-actions">
-      <button id="cookie-accept" class="cookie-btn cookie-btn-accept" aria-label="Accept cookies">Accept</button>
-      <button id="cookie-decline" class="cookie-btn cookie-btn-decline"
-        aria-label="Decline non-essential cookies">Decline</button>
+  <!-- GDPR Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner"
+    style="display: none;">
+    <div class="cookie-banner-content">
+      <div class="cookie-banner-text">
+        <p class="mb-2">
+          <strong>🍪 We value your privacy</strong>
+        </p>
+        <p class="small mb-0">
+          We use essential cookies to ensure our website works properly. We do not use tracking cookies or sell your
+          data.
+          <a href="legal/cookies.html" class="cookie-link">Learn more about our cookie policy</a> |
+          <a href="legal/privacy.html" class="cookie-link">Privacy Policy</a> |
+          <a href="legal/gdpr.html" class="cookie-link">GDPR Rights</a>
+        </p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="cookie-accept" class="cookie-btn cookie-btn-accept" aria-label="Accept cookies">Accept</button>
+        <button id="cookie-decline" class="cookie-btn cookie-btn-decline"
+          aria-label="Decline non-essential cookies">Decline</button>
+      </div>
     </div>
   </div>
-</div>
 
-<style>
-  .cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border-top: 2px solid #5746e3;
-    padding: 1rem;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-    animation: slideUp 0.4s ease-out;
-  }
+  <script>
+    // GDPR Cookie Consent Manager
+    (function () {
+      const COOKIE_NAME = 'tb_cookie_consent';
+      const COOKIE_DURATION = 365; // days
 
-  @keyframes slideUp {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .cookie-banner-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .cookie-banner-text {
-    flex: 1;
-    min-width: 250px;
-    color: #f5f5f5;
-  }
-
-  .cookie-banner-text p {
-    margin: 0;
-  }
-
-  .cookie-link {
-    color: #5746e3;
-    text-decoration: underline;
-    transition: color 0.2s;
-  }
-
-  .cookie-link:hover {
-    color: #7d6ef5;
-  }
-
-  .cookie-banner-actions {
-    display: flex;
-    gap: 0.75rem;
-    flex-shrink: 0;
-  }
-
-  .cookie-btn {
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .cookie-btn-accept {
-    background: #5746e3;
-    color: #fff;
-  }
-
-  .cookie-btn-accept:hover {
-    background: #6d5df5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(87, 70, 227, 0.4);
-  }
-
-  .cookie-btn-decline {
-    background: transparent;
-    color: #f5f5f5;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  .cookie-btn-decline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
-  @media (max-width: 768px) {
-    .cookie-banner-content {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .cookie-banner-actions {
-      width: 100%;
-    }
-
-    .cookie-btn {
-      flex: 1;
-    }
-  }
-</style>
-
-<script>
-  // GDPR Cookie Consent Manager
-  (function () {
-    const COOKIE_NAME = 'tb_cookie_consent';
-    const COOKIE_DURATION = 365; // days
-
-    function getCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
-      return null;
-    }
-
-    function setCookie(name, value, days) {
-      const date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      const expires = `expires=${date.toUTCString()}`;
-      document.cookie = `${name}=${value};${expires};path=/;SameSite=Strict;Secure`;
-    }
-
-    function showBanner() {
-      const banner = document.getElementById('cookie-banner');
-      if (banner) {
-        banner.style.display = 'block';
-      }
-    }
-
-    function hideBanner() {
-      const banner = document.getElementById('cookie-banner');
-      if (banner) {
-        banner.style.display = 'none';
-      }
-    }
-
-    function handleConsent(accepted) {
-      setCookie(COOKIE_NAME, accepted ? 'accepted' : 'declined', COOKIE_DURATION);
-      hideBanner();
-
-      // Log consent for transparency
-      console.log(`Cookie consent: ${accepted ? 'Accepted' : 'Declined'}`);
-
-      // If you add analytics in the future, initialize them here only if accepted
-      if (accepted) {
-        // Future: Initialize analytics here
-        // Example: initializeAnalytics();
-      }
-    }
-
-    // Check if user has already made a choice
-    const consent = getCookie(COOKIE_NAME);
-
-    if (!consent) {
-      // Show banner after a short delay for better UX
-      setTimeout(showBanner, 1000);
-    }
-
-    // Event listeners
-    document.addEventListener('DOMContentLoaded', function () {
-      const acceptBtn = document.getElementById('cookie-accept');
-      const declineBtn = document.getElementById('cookie-decline');
-
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', () => handleConsent(true));
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
       }
 
-      if (declineBtn) {
-        declineBtn.addEventListener('click', () => handleConsent(false));
+      function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = `expires=${date.toUTCString()}`;
+        document.cookie = `${name}=${value};${expires};path=/;SameSite=Strict;Secure`;
       }
-    });
-  })();
-</script>
+
+      function showBanner() {
+        const banner = document.getElementById('cookie-banner');
+        if (banner) {
+          banner.style.display = 'block';
+        }
+      }
+
+      function hideBanner() {
+        const banner = document.getElementById('cookie-banner');
+        if (banner) {
+          banner.style.display = 'none';
+        }
+      }
+
+      function handleConsent(accepted) {
+        setCookie(COOKIE_NAME, accepted ? 'accepted' : 'declined', COOKIE_DURATION);
+        hideBanner();
+
+        // Log consent for transparency
+        console.log(`Cookie consent: ${accepted ? 'Accepted' : 'Declined'}`);
+
+        // If you add analytics in the future, initialize them here only if accepted
+        if (accepted) {
+          // Future: Initialize analytics here
+          // Example: initializeAnalytics();
+        }
+      }
+
+      // Check if user has already made a choice
+      const consent = getCookie(COOKIE_NAME);
+
+      if (!consent) {
+        // Show banner after a short delay for better UX
+        setTimeout(showBanner, 1000);
+      }
+
+      // Event listeners
+      document.addEventListener('DOMContentLoaded', function () {
+        const acceptBtn = document.getElementById('cookie-accept');
+        const declineBtn = document.getElementById('cookie-decline');
+
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', () => handleConsent(true));
+        }
+
+        if (declineBtn) {
+          declineBtn.addEventListener('click', () => handleConsent(false));
+        }
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
