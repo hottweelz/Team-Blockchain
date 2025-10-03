@@ -582,11 +582,12 @@
 
 </html>
 <script>
-  // Fetch and display latest podcast episodes from Cloudflare Worker (replace URL with your Worker endpoint)
+  // Lazy load podcast episodes using Intersection Observer
   document.addEventListener('DOMContentLoaded', function () {
-    const workerUrl = 'https://teamblockchain.cyberfm.workers.dev/api/podcast'; // Worker URL
     const podcastContainer = document.getElementById('podcast-episodes');
     if (!podcastContainer) return;
+
+    let episodesLoaded = false;
 
     // Helper function to add link-fancy classes to all links in HTML content
     function stylizeLinks(htmlContent) {
@@ -600,54 +601,82 @@
       return div.innerHTML;
     }
 
-    fetch(workerUrl)
-      .then(response => response.json())
-      .then(data => {
-        if (!data.items || !data.items.length) {
-          podcastContainer.innerHTML = '<p class="text-secondary">No episodes found.</p>';
-          return;
-        }
+    function loadPodcastEpisodes() {
+      if (episodesLoaded) return;
+      episodesLoaded = true;
 
-        // Featured (latest) episode
-        const latest = data.items[0];
-        let html = `<div class="row justify-content-center mb-5">
-          <div class="col-12 col-lg-10">
-            <div class="podcast-card">
-              <h3 class="h4 mb-4 text-center">Latest Episode</h3>
-              <audio controls style="width:100%;">
-                <source src="${latest.enclosure}" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <h4 class="h5 mt-3">${latest.title}</h4>
-              <p class="text-secondary">${latest.pubDate ? new Date(latest.pubDate).toLocaleDateString() : ''}</p>
-              <p>${stylizeLinks(latest.description)}</p>
-              <a href="${latest.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
-            </div>
-          </div>
-        </div>`;
+      // Show loading state
+      podcastContainer.innerHTML = '<p class="text-secondary text-center">Loading episodes...</p>';
 
-        // Recent episodes (next 4)
-        html += '<div class="row g-4">';
-        for (let i = 1; i < Math.min(5, data.items.length); i++) {
-          const ep = data.items[i];
-          html += `<div class="col-12 col-md-6 col-lg-3">
-            <div class="podcast-card">
-              <audio controls style="width:100%;">
-                <source src="${ep.enclosure}" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <h5 class="h6 mt-2">${ep.title}</h5>
-              <p class="text-secondary">${ep.pubDate ? new Date(ep.pubDate).toLocaleDateString() : ''}</p>
-              <a href="${ep.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
+      const workerUrl = 'https://teamblockchain.cyberfm.workers.dev/api/podcast';
+
+      fetch(workerUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (!data.items || !data.items.length) {
+            podcastContainer.innerHTML = '<p class="text-secondary">No episodes found.</p>';
+            return;
+          }
+
+          // Featured (latest) episode
+          const latest = data.items[0];
+          let html = `<div class="row justify-content-center mb-5">
+            <div class="col-12 col-lg-10">
+              <div class="podcast-card">
+                <h3 class="h4 mb-4 text-center">Latest Episode</h3>
+                <audio controls style="width:100%;">
+                  <source src="${latest.enclosure}" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+                <h4 class="h5 mt-3">${latest.title}</h4>
+                <p class="text-secondary">${latest.pubDate ? new Date(latest.pubDate).toLocaleDateString() : ''}</p>
+                <p>${stylizeLinks(latest.description)}</p>
+                <a href="${latest.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
+              </div>
             </div>
           </div>`;
+
+          // Recent episodes (next 4)
+          html += '<div class="row g-4">';
+          for (let i = 1; i < Math.min(5, data.items.length); i++) {
+            const ep = data.items[i];
+            html += `<div class="col-12 col-md-6 col-lg-3">
+              <div class="podcast-card">
+                <audio controls style="width:100%;">
+                  <source src="${ep.enclosure}" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+                <h5 class="h6 mt-2">${ep.title}</h5>
+                <p class="text-secondary">${ep.pubDate ? new Date(ep.pubDate).toLocaleDateString() : ''}</p>
+                <a href="${ep.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
+              </div>
+            </div>`;
+          }
+          html += '</div>';
+          podcastContainer.innerHTML = html;
+        })
+        .catch(() => {
+          podcastContainer.innerHTML = '<p class="text-secondary">Failed to load podcast episodes.</p>';
+        });
+    }
+
+    // Use Intersection Observer to load episodes when section comes into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadPodcastEpisodes();
+          observer.unobserve(entry.target); // Stop observing after loading
         }
-        html += '</div>';
-        podcastContainer.innerHTML = html;
-      })
-      .catch(() => {
-        podcastContainer.innerHTML = '<p class="text-secondary">Failed to load podcast episodes.</p>';
       });
+    }, {
+      rootMargin: '100px' // Start loading 100px before the section is visible
+    });
+
+    // Observe the podcast section
+    const podcastSection = document.getElementById('podcast');
+    if (podcastSection) {
+      observer.observe(podcastSection);
+    }
   });
 </script>
 
