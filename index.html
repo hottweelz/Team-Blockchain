@@ -306,7 +306,7 @@
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10">
             <div class="newsletter-signup text-center">
-              <span class="h5 text-secondary fw-lighter d-block">Stay Informed</span>
+              <span class="h5 text-secondary fw-lighter d-block mb-2">Stay Informed</span>
               <h2 class="section-title display-4 mt-3 mb-4">Subscribe to Digital Bytes</h2>
               <p class="lead text-secondary mb-4 col-lg-8 mx-auto">
                 Get full access to our newsletter and stay updated on how, why, and where blockchain technology and
@@ -334,7 +334,7 @@
       <div class="container px-vw-5">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <span class="h5 text-secondary fw-lighter d-block">Latest Insights</span>
+            <span class="h5 text-secondary fw-lighter d-block mb-2">Latest Insights</span>
             <h2 class="section-title display-4 mt-3">Featured Articles</h2>
           </div>
         </div>
@@ -352,7 +352,7 @@
       <div class="container px-vw-5">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <span class="h5 text-secondary fw-lighter d-block">Listen & Learn</span>
+            <span class="h5 text-secondary fw-lighter d-block mb-2">Listen & Learn</span>
             <h2 class="section-title display-4 mt-3">Digital Bytes Podcast</h2>
             <p class="lead text-secondary mt-4 col-lg-8 mx-auto">
               Tune in to our weekly radio show featuring expert discussions, interviews, and analysis of the latest
@@ -597,9 +597,9 @@
           </div>
         </div>`;
 
-        // Recent episodes (next 3)
+        // Recent episodes (next 4)
         html += '<div class="row g-4">';
-        for (let i = 1; i < Math.min(4, data.items.length); i++) {
+        for (let i = 1; i < Math.min(5, data.items.length); i++) {
           const ep = data.items[i];
           html += `<div class="col-12 col-md-6 col-lg-3">
             <div class="podcast-card">
