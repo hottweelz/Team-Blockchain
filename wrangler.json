@@ -1,0 +1,5 @@
+{
+  "name": "team-blockchain-worker",
+  "main": "cloudflare-worker-fast-xml.js",
+  "compatibility_date": "2025-10-03"
+}
