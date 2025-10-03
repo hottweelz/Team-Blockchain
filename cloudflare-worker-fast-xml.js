@@ -4,7 +4,7 @@ import { XMLParser } from 'fast-xml-parser';
 export default {
     async fetch(request, env, ctx) {
         const url = new URL(request.url);
-        
+
         // If requesting /api/podcast, return JSON podcast data
         if (url.pathname === '/api/podcast') {
             const rssUrl = "https://anchor.fm/s/7bb47050/podcast/rss";
@@ -30,7 +30,7 @@ export default {
                 }));
 
                 response = new Response(JSON.stringify({ items }), {
-                    headers: { 
+                    headers: {
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "*"
                     }
@@ -40,7 +40,7 @@ export default {
             }
             return response;
         }
-        
+
         // Otherwise, serve static assets
         return env.ASSETS.fetch(request);
     }
