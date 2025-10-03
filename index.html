@@ -230,6 +230,34 @@
 
       .hero-section {
         min-height: 70vh;
+        padding-top: 80px; /* Add padding to account for navbar */
+      }
+
+      /* Navbar mobile styles */
+      .navbar-brand img {
+        height: 40px !important;
+      }
+
+      .navbar-collapse {
+        background: rgba(0, 0, 0, 0.98);
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-nav {
+        margin-bottom: 1rem;
+      }
+
+      .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        text-align: center;
+      }
+
+      .btn-outline-light {
+        width: 100%;
+        margin-top: 0.5rem;
       }
     }
   </style>
@@ -239,30 +267,39 @@
   <a href="#main-content" class="visually-hidden-focusable skip-link">Skip to main content</a>
 
   <!-- Navigation -->
-  <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0" role="navigation"
+  <nav id="navScroll" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top px-vw-5" tabindex="0" role="navigation"
     aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html"
+      <a class="navbar-brand pe-md-4 fs-5" href="index.html"
         style="display: flex; align-items: center;">
         <img src="img/webp/logo-tbchain2.webp" alt="TeamBlockchain logo"
-          style="height:64px; width:auto; margin-right:12px; background:transparent;">
+          style="height:48px; width:auto; margin-right:8px; background:transparent;">
       </a>
 
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="#newsletter" aria-label="Newsletter section">Newsletter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="#podcast" aria-label="Podcast section">Podcast</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="#about" aria-label="About section">About</a>
-        </li>
-      </ul>
-      <a href="https://digitalbytes.substack.com/" target="_blank" aria-label="Read Our Substack"
-        class="btn btn-outline-light">
-        <small>Read on Substack</small>
-      </a>
+      <!-- Hamburger Menu Button for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Navigation -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#newsletter" aria-label="Newsletter section">Newsletter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#podcast" aria-label="Podcast section">Podcast</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" aria-label="About section">About</a>
+          </li>
+        </ul>
+        <a href="https://digitalbytes.substack.com/" target="_blank" aria-label="Read Our Substack"
+          class="btn btn-outline-light btn-sm">
+          <small>Read on Substack</small>
+        </a>
+      </div>
     </div>
   </nav>
 
