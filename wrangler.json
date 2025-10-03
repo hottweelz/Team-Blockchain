@@ -1,5 +1,8 @@
 {
     "name": "teamblockchain",
     "main": "cloudflare-worker-fast-xml.js",
-    "compatibility_date": "2025-10-03"
+    "compatibility_date": "2025-10-03",
+    "assets": {
+        "directory": "."
+    }
 }
