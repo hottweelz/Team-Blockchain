@@ -440,22 +440,22 @@
           <div class="col-12 col-md-6 col-lg-4">
             <h5 class="mb-3">Quick Links</h5>
             <ul class="list-unstyled">
-              <li class="mb-2"><a href="#newsletter" class="text-secondary text-decoration-none">Newsletter</a></li>
-              <li class="mb-2"><a href="#podcast" class="text-secondary text-decoration-none">Podcast</a></li>
-              <li class="mb-2"><a href="#about" class="text-secondary text-decoration-none">About</a></li>
+              <li class="mb-2"><a href="#newsletter" class="link-fancy link-fancy-light">Newsletter</a></li>
+              <li class="mb-2"><a href="#podcast" class="link-fancy link-fancy-light">Podcast</a></li>
+              <li class="mb-2"><a href="#about" class="link-fancy link-fancy-light">About</a></li>
               <li class="mb-2"><a href="https://digitalbytes.substack.com/archive" target="_blank"
-                  class="text-secondary text-decoration-none">Archive</a></li>
+                  class="link-fancy link-fancy-light">Archive</a></li>
             </ul>
           </div>
           <div class="col-12 col-md-6 col-lg-4">
             <h5 class="mb-3">Connect</h5>
             <ul class="list-unstyled">
               <li class="mb-2"><a href="https://digitalbytes.substack.com/" target="_blank"
-                  class="text-secondary text-decoration-none">Substack</a></li>
+                  class="link-fancy link-fancy-light">Substack</a></li>
               <li class="mb-2"><a href="https://www.linkedin.com/company/teamblockchain/" target="_blank"
-                  class="text-secondary text-decoration-none">LinkedIn</a></li>
+                  class="link-fancy link-fancy-light">LinkedIn</a></li>
               <li class="mb-2"><a href="https://twitter.com/teamblockchain" target="_blank"
-                  class="text-secondary text-decoration-none">Twitter</a></li>
+                  class="link-fancy link-fancy-light">Twitter</a></li>
             </ul>
           </div>
         </div>
@@ -589,7 +589,7 @@
               <h4 class="h5 mt-3">${latest.title}</h4>
               <p class="text-secondary">${latest.pubDate ? new Date(latest.pubDate).toLocaleDateString() : ''}</p>
               <p>${latest.description || ''}</p>
-              <a href="${latest.link}" target="_blank">Episode Page →</a>
+              <a href="${latest.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
             </div>
           </div>
         </div>`;
@@ -606,7 +606,7 @@
               </audio>
               <h5 class="h6 mt-2">${ep.title}</h5>
               <p class="text-secondary">${ep.pubDate ? new Date(ep.pubDate).toLocaleDateString() : ''}</p>
-              <a href="${ep.link}" target="_blank">Episode Page →</a>
+              <a href="${ep.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
             </div>
           </div>`;
         }
