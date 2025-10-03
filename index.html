@@ -568,6 +568,18 @@
     const podcastContainer = document.getElementById('podcast-episodes');
     if (!podcastContainer) return;
 
+    // Helper function to add link-fancy classes to all links in HTML content
+    function stylizeLinks(htmlContent) {
+      if (!htmlContent) return '';
+      const div = document.createElement('div');
+      div.innerHTML = htmlContent;
+      const links = div.querySelectorAll('a');
+      links.forEach(link => {
+        link.classList.add('link-fancy', 'link-fancy-light');
+      });
+      return div.innerHTML;
+    }
+
     fetch(workerUrl)
       .then(response => response.json())
       .then(data => {
@@ -588,7 +600,7 @@
               </audio>
               <h4 class="h5 mt-3">${latest.title}</h4>
               <p class="text-secondary">${latest.pubDate ? new Date(latest.pubDate).toLocaleDateString() : ''}</p>
-              <p>${latest.description || ''}</p>
+              <p>${stylizeLinks(latest.description)}</p>
               <a href="${latest.link}" target="_blank" class="link-fancy link-fancy-light">Episode Page →</a>
             </div>
           </div>
