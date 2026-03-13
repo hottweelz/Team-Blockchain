@@ -356,6 +356,15 @@
 
     .cookie-banner-text p {
       margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .cookie-banner-text small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #bbb;
     }
 
     .cookie-link {
@@ -571,6 +580,8 @@
 
               <div class="substack-embed-container">
                 <iframe src="https://digitalbytes.substack.com/embed" width="480" height="150"
+                  sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                  referrerpolicy="no-referrer-when-downgrade" allow="payment"
                   style="border:1px solid #EEE; background:white; overflow:hidden;"
                   title="Subscribe to Digital Bytes on Substack" loading="lazy"></iframe>
               </div>
@@ -883,12 +894,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script>
-    // Initialize AOS (Animate On Scroll)
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
+    // Wait for AOS to load before initializing
+    window.addEventListener('load', function () {
+      if (typeof AOS !== 'undefined') {
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+      }
     });
 
     // Navbar scroll effect
@@ -1032,8 +1048,8 @@
           <strong>🍪 We value your privacy</strong>
         </p>
         <p class="small mb-0">
-          We use essential cookies to ensure our website works properly. We do not use tracking cookies or sell your
-          data.
+          We use essential cookies to ensure our website works properly. Our newsletter signup form includes Substack,
+          which sets cookies for personalization and session tracking.
           <a href="legal/cookies.html" class="cookie-link">Learn more about our cookie policy</a> |
           <a href="legal/privacy.html" class="cookie-link">Privacy Policy</a> |
           <a href="legal/gdpr.html" class="cookie-link">GDPR Rights</a>
