@@ -22,6 +22,9 @@
   <link rel="canonical" href="https://www.teamblockchain.net/">
   <title>Blockchain Insights Newsletter & Crypto Podcast | Team Blockchain</title>
 
+  <!-- Preload critical fonts to parallelize loading -->
+  <link rel="preload" href="fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-v12-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -574,11 +577,11 @@
               </p>
 
               <div class="substack-embed-container">
-                <iframe src="https://digitalbytes.substack.com/embed" width="480" height="150"
+                <iframe data-src="https://digitalbytes.substack.com/embed" width="480" height="150"
                   sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                   referrerpolicy="no-referrer-when-downgrade" allow="payment"
                   style="border:1px solid #EEE; background:white; overflow:hidden;"
-                  title="Subscribe to Digital Bytes on Substack" loading="lazy"></iframe>
+                  title="Subscribe to Digital Bytes on Substack"></iframe>
               </div>
 
               <p class="mt-4 text-secondary small">
@@ -756,9 +759,9 @@
               insights.
             </p>
             <div class="substack-embed-container">
-              <iframe src="https://digitalbytes.substack.com/embed" width="480" height="150"
+              <iframe data-src="https://digitalbytes.substack.com/embed" width="480" height="150"
                 style="border:1px solid #EEE; background:white; overflow:hidden;"
-                title="Subscribe to Digital Bytes on Substack" loading="lazy"></iframe>
+                title="Subscribe to Digital Bytes on Substack"></iframe>
             </div>
           </div>
         </div>
@@ -932,6 +935,20 @@
         }
       });
     });
+
+    // Lazy-load Substack iframe only when it enters viewport
+    const substackIframe = document.querySelector('.substack-embed-container iframe');
+    if (substackIframe && 'IntersectionObserver' in window) {
+      const substackObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.src) {
+            entry.target.src = entry.target.dataset.src;
+            substackObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '100px' }); // Start loading 100px before viewport
+      substackObserver.observe(substackIframe);
+    }
   </script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
