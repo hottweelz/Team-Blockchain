@@ -298,9 +298,11 @@
   <link rel="preconnect" href="https://api.rss2json.com">
   <link rel="preconnect" href="https://teamblockchain.cyberfm.workers.dev">
   <link rel="preload" href="css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/fonts.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="css/fonts.css">
+  </noscript>
   <link rel="preload" as="image" href="img/teamblockchain_hero.png">
-  
+
   <link rel="stylesheet" href="css/theme.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/custom-theme.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/custom-accessibility.css" media="print" onload="this.media='all'">
@@ -895,7 +897,7 @@
     async function loadSubstackPosts() {
       const cacheKey = 'substack_posts_cache';
       const container = document.getElementById('substack-articles');
-      
+
       // Try cache first
       const cached = getCachedData(cacheKey);
       if (cached) {
@@ -906,7 +908,7 @@
       try {
         const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://digitalbytes.substack.com/feed');
         const data = await response.json();
-        
+
         // Cache the response
         setCachedData(cacheKey, data);
         renderSubstackPosts(data, container);
@@ -919,7 +921,7 @@
     function renderSubstackPosts(data, container) {
       const posts = data.items.slice(0, 6);
       let html = '';
-      
+
       posts.forEach(post => {
         let imageUrl = 'img/webp/abstract17.webp';
         try {
@@ -946,7 +948,7 @@
           </div>
         `;
       });
-      
+
       container.innerHTML = html;
     }
 
