@@ -59,7 +59,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": "NewsMediaOrganization",
         "@id": "https://www.teamblockchain.net/#organization",
         "name": "TeamBlockchain",
         "alternateName": "Digital Bytes",
@@ -75,10 +75,14 @@
           "@id": "https://www.teamblockchain.net/#logo"
         },
         "description": "Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain.",
+        "about": {
+          "@type": "Thing",
+          "name": "Blockchain, Cryptocurrency, DeFi, Web3, Digital Assets, Fintech, Cryptocurrency News, Blockchain News"
+        },
         "sameAs": [
           "https://www.linkedin.com/company/team-blockchain-ltd/",
           "https://twitter.com/teamblockchain",
-          "https://digitalbytes.substack.com/"
+          "https://digitalbytes.substack.com/",
           "https://github.com/hottweelz/TeamBlockchain/"
         ],
         "contactPoint": {
@@ -116,25 +120,7 @@
         "description": "Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain. Stay updated with the latest trends, podcasts, and expert commentary.",
         "inLanguage": "en-GB"
       },
-      {
-        "@type": "NewsMediaOrganization",
-        "@id": "https://www.teamblockchain.net/#publisher",
-        "name": "Digital Bytes",
-        "url": "https://www.teamblockchain.net/",
-        "logo": {
-          "@id": "https://www.teamblockchain.net/#logo"
-        },
-        "about": {
-          "@type": "Thing",
-          "name": "Blockchain, Cryptocurrency, DeFi, Web3, Digital Assets, Fintech, Cryptocurrency News, Blockchain News"
-        },
-        "sameAs": [
-          "https://digitalbytes.substack.com/",
-          "https://github.com/hottweelz/TeamBlockchain/"
-          "https://twitter.com/teamblockchain",
-          "https://www.linkedin.com/company/team-blockchain-ltd/"
-        ]
-      },
+
       {
         "@type": "BreadcrumbList",
         "@id": "https://www.teamblockchain.net/#breadcrumb",
