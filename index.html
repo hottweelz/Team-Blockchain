@@ -294,8 +294,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
 
+  <link rel="preconnect" href="https://digitalbytes.substack.com">
+  <link rel="preconnect" href="https://api.rss2json.com">
+  <link rel="preconnect" href="https://teamblockchain.cyberfm.workers.dev">
+  <link rel="preload" href="css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/fonts.css"></noscript>
+  <link rel="preload" as="image" href="img/teamblockchain_hero.png">
+  
   <link rel="stylesheet" href="css/theme.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/custom-theme.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/custom-accessibility.css" media="print" onload="this.media='all'">
 
@@ -466,6 +472,15 @@
       .article-card {
         margin-bottom: 1.5rem;
       }
+    }
+
+    /* Prevent layout shift on dynamic content */
+    #substack-articles {
+      min-height: 400px;
+    }
+
+    #podcast-episodes {
+      min-height: 300px;
 
       /* Footer links touch targets */
       footer a {
@@ -837,43 +852,102 @@
 
   <!-- Scripts -->
   <script>
+    // XSS Sanitization helper
+    function escapeHTML(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[tag]));
+    }
+
+    // API Response caching
+    function getCachedData(key) {
+      const cached = localStorage.getItem(key);
+      if (!cached) return null;
+      try {
+        const { data, timestamp } = JSON.parse(cached);
+        // Cache for 1 hour
+        if (Date.now() - timestamp < 3600000) {
+          return data;
+        }
+        localStorage.removeItem(key);
+      } catch (e) {
+        localStorage.removeItem(key);
+      }
+      return null;
+    }
+
+    function setCachedData(key, data) {
+      try {
+        localStorage.setItem(key, JSON.stringify({
+          data,
+          timestamp: Date.now()
+        }));
+      } catch (e) {
+        console.warn('Cache storage failed:', e);
+      }
+    }
+
     async function loadSubstackPosts() {
+      const cacheKey = 'substack_posts_cache';
+      const container = document.getElementById('substack-articles');
+      
+      // Try cache first
+      const cached = getCachedData(cacheKey);
+      if (cached) {
+        renderSubstackPosts(cached, container);
+        return;
+      }
+
       try {
         const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://digitalbytes.substack.com/feed');
         const data = await response.json();
+        
+        // Cache the response
+        setCachedData(cacheKey, data);
+        renderSubstackPosts(data, container);
+      } catch (error) {
+        console.error('Error loading Substack posts:', error);
+        container.innerHTML = '<p class="text-center text-secondary">Could not load latest articles. Please visit our <a href="https://digitalbytes.substack.com/" target="_blank" rel="noopener noreferrer" class="link-fancy link-fancy-light">Substack page</a> directly.</p>';
+      }
+    }
 
-        const container = document.getElementById('substack-articles');
-        const posts = data.items.slice(0, 6); // Get first 6 posts
-
-        posts.forEach(post => {
-          // Extract image from content or use a placeholder
-          let imageUrl = 'img/webp/abstract17.webp'; // Default placeholder image
+    function renderSubstackPosts(data, container) {
+      const posts = data.items.slice(0, 6);
+      let html = '';
+      
+      posts.forEach(post => {
+        let imageUrl = 'img/webp/abstract17.webp';
+        try {
           const parser = new DOMParser();
           const doc = parser.parseFromString(post.content, 'text/html');
           const imgElement = doc.querySelector('img');
           if (imgElement && imgElement.src) {
             imageUrl = imgElement.src;
           }
+        } catch (e) {
+          // Use placeholder on parse error
+        }
 
-          const article = `
-            <div class="col-12 col-md-6 col-lg-4">
-              <article class="article-card">
-                <img src="${imageUrl}" alt="${post.title}">
-                <div class="article-content">
-                  <h3 class="h4 mb-3">${post.title}</h3>
-                  <p class="text-secondary mb-4">${post.description ? post.description.substring(0, 150) + '...' : ''}</p>
-                  <a href="${post.link}" target="_blank" class="link-fancy link-fancy-light">Read more →</a>
-                </div>
-              </article>
-            </div>
-          `;
-          container.innerHTML += article;
-        });
-      } catch (error) {
-        console.error('Error loading Substack posts:', error);
-        // Optionally display a message to the user or fallback content
-        document.getElementById('substack-articles').innerHTML = '<p class="text-center text-secondary">Could not load latest articles. Please visit our <a href="https://digitalbytes.substack.com/" target="_blank" class="link-fancy link-fancy-light">Substack page</a> directly.</p>';
-      }
+        html += `
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="article-card">
+              <img src="${escapeHTML(imageUrl)}" alt="${escapeHTML(post.title)}" loading="lazy" decoding="async">
+              <div class="article-content">
+                <h3 class="h4 mb-3">${escapeHTML(post.title)}</h3>
+                <p class="text-secondary mb-4">${escapeHTML(post.description ? post.description.substring(0, 150) + '...' : '')}</p>
+                <a href="${escapeHTML(post.link)}" target="_blank" rel="noopener noreferrer" class="link-fancy link-fancy-light">Read more →</a>
+              </div>
+            </article>
+          </div>
+        `;
+      });
+      
+      container.innerHTML = html;
     }
 
     // Load posts when page loads
@@ -881,20 +955,7 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script>
-    // Wait for AOS to load before initializing
-    window.addEventListener('load', function () {
-      if (typeof AOS !== 'undefined') {
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-          duration: 800,
-          easing: 'ease-in-out',
-          once: true,
-          mirror: false
-        });
-      }
-    });
 
     // Navbar scroll effect
     let scrollpos = window.scrollY;
@@ -941,7 +1002,6 @@
       substackObserver.observe(substackIframe);
     }
   </script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
   <script>
     // Lazy load podcast episodes using Intersection Observer
@@ -1067,7 +1127,7 @@
   </div>
 
   <script>
-    // GDPR Cookie Consent Manager
+    // GDPR Cookie Consent Manager + Iframe Gate
     (function () {
       const COOKIE_NAME = 'tb_cookie_consent';
       const COOKIE_DURATION = 365; // days
@@ -1100,6 +1160,15 @@
         }
       }
 
+      function loadSubstackIframes() {
+        const iframes = document.querySelectorAll('.substack-embed-container iframe[data-src]');
+        iframes.forEach(iframe => {
+          if (!iframe.src) {
+            iframe.src = iframe.dataset.src;
+          }
+        });
+      }
+
       function handleConsent(accepted) {
         setCookie(COOKIE_NAME, accepted ? 'accepted' : 'declined', COOKIE_DURATION);
         hideBanner();
@@ -1107,10 +1176,9 @@
         // Log consent for transparency
         console.log(`Cookie consent: ${accepted ? 'Accepted' : 'Declined'}`);
 
-        // If you add analytics in the future, initialize them here only if accepted
+        // Only load Substack iframes if consent accepted
         if (accepted) {
-          // Future: Initialize analytics here
-          // Example: initializeAnalytics();
+          loadSubstackIframes();
         }
       }
 
@@ -1120,6 +1188,9 @@
       if (!consent) {
         // Show banner after a short delay for better UX
         setTimeout(showBanner, 1000);
+      } else if (consent === 'accepted') {
+        // Load iframes if already accepted
+        loadSubstackIframes();
       }
 
       // Event listeners
