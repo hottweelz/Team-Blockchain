@@ -1,17 +1,22 @@
 // Cloudflare Worker using fast-xml-parser to fetch, parse, and cache podcast RSS as JSON
 import { XMLParser } from 'fast-xml-parser';
 
-const CORS_HEADERS = {
-    "Access-Control-Allow-Origin": "https://www.teamblockchain.net",
-    "Access-Control-Allow-Methods": "GET, OPTIONS",
-    "Access-Control-Max-Age": "86400",
-};
+// Use wildcard origin - this is public read-only data with no credentials.
+// A named origin risks a double-header if Cloudflare or a cache layer also
+// injects ACAO, which browsers reject even when both values are identical.
+const CORS_ORIGIN = '*';
+
+function applyCors(headers) {
+    headers.set('access-control-allow-origin', CORS_ORIGIN);
+    headers.set('access-control-allow-methods', 'GET, OPTIONS');
+    return headers;
+}
 
 export default {
     async fetch(request, env, ctx) {
         // Handle CORS preflight
         if (request.method === 'OPTIONS') {
-            return new Response(null, { status: 204, headers: CORS_HEADERS });
+            return new Response(null, { status: 204, headers: applyCors(new Headers()) });
         }
 
         const url = new URL(request.url);
@@ -22,13 +27,13 @@ export default {
             const cacheKey = new Request("https://teamblockchain.cyberfm.workers.dev/api/podcast/cache");
             const cache = caches.default;
 
-            // Try cache first; re-apply CORS headers in case response was cached before this fix
+            // Try cache first; use Headers.set() (case-insensitive) to ensure exactly
+            // one ACAO header regardless of how the cached copy was stored.
             const cachedResponse = await cache.match(cacheKey);
             if (cachedResponse) {
-                return new Response(cachedResponse.body, {
-                    status: cachedResponse.status,
-                    headers: { ...Object.fromEntries(cachedResponse.headers), ...CORS_HEADERS },
-                });
+                const h = new Headers(cachedResponse.headers);
+                applyCors(h);
+                return new Response(cachedResponse.body, { status: cachedResponse.status, headers: h });
             }
 
             try {
@@ -57,7 +62,7 @@ export default {
                 }));
 
                 const response = new Response(JSON.stringify({ items }), {
-                    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+                    headers: applyCors(new Headers({ 'content-type': 'application/json' })),
                 });
                 // Cache for 30 minutes
                 ctx.waitUntil(cache.put(cacheKey, response.clone()));
@@ -65,7 +70,7 @@ export default {
             } catch (err) {
                 return new Response(JSON.stringify({ error: String(err?.message || err), items: [] }), {
                     status: 500,
-                    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+                    headers: applyCors(new Headers({ 'content-type': 'application/json' })),
                 });
             }
         }

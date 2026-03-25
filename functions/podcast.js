@@ -1,28 +1,30 @@
 // Cloudflare Pages Function: Podcast RSS to JSON using fast-xml-parser
 import { XMLParser } from 'fast-xml-parser';
 
-const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "https://www.teamblockchain.net",
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Max-Age": "86400",
-};
+const CORS_ORIGIN = '*';
+
+function applyCors(headers) {
+  headers.set('access-control-allow-origin', CORS_ORIGIN);
+  headers.set('access-control-allow-methods', 'GET, OPTIONS');
+  return headers;
+}
 
 export async function onRequest(context) {
   if (context.request.method === 'OPTIONS') {
-    return new Response(null, { status: 204, headers: CORS_HEADERS });
+    return new Response(null, { status: 204, headers: applyCors(new Headers()) });
   }
 
   const rssUrl = "https://anchor.fm/s/7bb47050/podcast/rss";
   const cache = caches.default;
   const cacheKey = new Request(context.request.url);
 
-  // Try cache first
+  // Try cache first; use Headers.set() (case-insensitive) to ensure exactly
+  // one ACAO header regardless of how the cached copy was stored.
   const cachedResponse = await cache.match(cacheKey);
   if (cachedResponse) {
-    return new Response(cachedResponse.body, {
-      status: cachedResponse.status,
-      headers: { ...Object.fromEntries(cachedResponse.headers), ...CORS_HEADERS },
-    });
+    const h = new Headers(cachedResponse.headers);
+    applyCors(h);
+    return new Response(cachedResponse.body, { status: cachedResponse.status, headers: h });
   }
 
   try {
@@ -51,7 +53,7 @@ export async function onRequest(context) {
     }));
 
     const response = new Response(JSON.stringify({ items }), {
-      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      headers: applyCors(new Headers({ 'content-type': 'application/json' })),
     });
     // Cache for 30 minutes
     context.waitUntil(cache.put(cacheKey, response.clone()));
@@ -59,7 +61,7 @@ export async function onRequest(context) {
   } catch (_err) {
     return new Response(JSON.stringify({ error: "Failed to load podcast feed", items: [] }), {
       status: 500,
-      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      headers: applyCors(new Headers({ 'content-type': 'application/json' })),
     });
   }
 }
