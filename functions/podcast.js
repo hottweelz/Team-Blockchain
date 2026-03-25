@@ -32,7 +32,10 @@ export async function onRequest(context) {
     const rssText = await rssResp.text();
 
     // Parse RSS to JSON
-    const parser = new XMLParser({ ignoreAttributes: false });
+    // processEntities: false prevents the default 1000-entity expansion limit
+    // from crashing on large feeds; HTML entities in descriptions render
+    // correctly when inserted via innerHTML.
+    const parser = new XMLParser({ ignoreAttributes: false, processEntities: false });
     const json = parser.parse(rssText);
 
     // item can be a single object when there is only one episode; guard accordingly

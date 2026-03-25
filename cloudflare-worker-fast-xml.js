@@ -38,7 +38,10 @@ export default {
                 const rssText = await rssResp.text();
 
                 // Parse RSS to JSON
-                const parser = new XMLParser({ ignoreAttributes: false });
+                // processEntities: false prevents the default 1000-entity expansion limit
+                // from crashing on large feeds; HTML entities in descriptions render
+                // correctly when inserted via innerHTML.
+                const parser = new XMLParser({ ignoreAttributes: false, processEntities: false });
                 const json = parser.parse(rssText);
 
                 // item can be a single object when there is only one episode; guard accordingly
@@ -59,8 +62,8 @@ export default {
                 // Cache for 30 minutes
                 ctx.waitUntil(cache.put(cacheKey, response.clone()));
                 return response;
-            } catch (_err) {
-                return new Response(JSON.stringify({ error: "Failed to load podcast feed", items: [] }), {
+            } catch (err) {
+                return new Response(JSON.stringify({ error: String(err?.message || err), items: [] }), {
                     status: 500,
                     headers: { "Content-Type": "application/json", ...CORS_HEADERS },
                 });
