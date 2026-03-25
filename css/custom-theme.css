@@ -216,6 +216,36 @@ one[btn-primary-custom]:focus-visible {
 }
 
 /* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary-custom {
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  color: #000000;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  min-height: 44px;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.btn-primary-custom:hover {
+  background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  color: #000000;
+}
+
+.btn-primary-custom:focus-visible {
+  outline: 3px solid #5746e3;
+  outline-offset: 2px;
+}
+
+/* ============================================
    MOBILE MEDIA QUERY ENHANCEMENTS
    ============================================ */
 @media (max-width: 768px) {
@@ -247,26 +277,9 @@ one[btn-primary-custom]:focus-visible {
     padding: 2rem;
   }
 
-  /* ============================================
-   BUTTONS
-   ============================================ */
+  /* Buttons already defined globally above; override sizing for mobile if needed */
   .btn-primary-custom {
-    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
-    color: #000000;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn-primary-custom:hover {
-    background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-    color: #000000;
+    padding: 0.65rem 1.5rem;
   }
 
   /* ============================================
