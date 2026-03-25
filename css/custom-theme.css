@@ -237,6 +237,9 @@ one[btn-primary-custom]:focus-visible {
   min-height: 44px;
   line-height: 1.5;
   vertical-align: middle;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .btn-primary-custom:hover {
