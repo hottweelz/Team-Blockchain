@@ -294,7 +294,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
 
-  <link rel="preconnect" href="https://digitalbytes.substack.com">
   <link rel="preconnect" href="https://api.rss2json.com">
   <link rel="preconnect" href="https://teamblockchain.cyberfm.workers.dev">
   <link rel="preload" href="css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -583,12 +582,10 @@
                 digital assets are being used across various jurisdictions and industries globally.
               </p>
 
-              <div class="substack-embed-container">
-                <iframe data-src="https://digitalbytes.substack.com/embed" width="480" height="150"
-                  sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-                  referrerpolicy="no-referrer-when-downgrade" allow="fullscreen *; payment"
-                  style="border:1px solid #EEE; background:white; overflow:hidden;"
-                  title="Subscribe to Digital Bytes on Substack"></iframe>
+              <div class="substack-cta my-4">
+                <a href="https://digitalbytes.substack.com/" target="_blank" rel="noopener noreferrer"
+                  class="btn-primary-custom" aria-label="Subscribe to Digital Bytes on Substack">Subscribe on Substack
+                  →</a>
               </div>
 
               <p class="mt-4 text-secondary small">
@@ -765,12 +762,10 @@
               Join thousands of professionals who rely on Digital Bytes for their weekly blockchain and digital asset
               insights.
             </p>
-            <div class="substack-embed-container">
-              <iframe data-src="https://digitalbytes.substack.com/embed" width="480" height="150"
-                sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-                referrerpolicy="no-referrer-when-downgrade" allow="fullscreen *; payment"
-                style="border:1px solid #EEE; background:white; overflow:hidden;"
-                title="Subscribe to Digital Bytes on Substack"></iframe>
+            <div class="substack-cta my-4">
+              <a href="https://digitalbytes.substack.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-primary-custom" aria-label="Subscribe to Digital Bytes on Substack">Subscribe on Substack
+                →</a>
             </div>
           </div>
         </div>
@@ -994,20 +989,6 @@
         }
       });
     });
-
-    // Lazy-load Substack iframe only when it enters viewport
-    const substackIframe = document.querySelector('.substack-embed-container iframe');
-    if (substackIframe && 'IntersectionObserver' in window) {
-      const substackObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !entry.target.src) {
-            entry.target.src = entry.target.dataset.src;
-            substackObserver.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '100px' }); // Start loading 100px before viewport
-      substackObserver.observe(substackIframe);
-    }
   </script>
 
   <script>
@@ -1167,26 +1148,10 @@
         }
       }
 
-      function loadSubstackIframes() {
-        const iframes = document.querySelectorAll('.substack-embed-container iframe[data-src]');
-        iframes.forEach(iframe => {
-          if (!iframe.src) {
-            iframe.src = iframe.dataset.src;
-          }
-        });
-      }
-
       function handleConsent(accepted) {
         setCookie(COOKIE_NAME, accepted ? 'accepted' : 'declined', COOKIE_DURATION);
         hideBanner();
-
-        // Log consent for transparency
         console.log(`Cookie consent: ${accepted ? 'Accepted' : 'Declined'}`);
-
-        // Only load Substack iframes if consent accepted
-        if (accepted) {
-          loadSubstackIframes();
-        }
       }
 
       // Check if user has already made a choice
@@ -1195,9 +1160,6 @@
       if (!consent) {
         // Show banner after a short delay for better UX
         setTimeout(showBanner, 1000);
-      } else if (consent === 'accepted') {
-        // Load iframes if already accepted
-        loadSubstackIframes();
       }
 
       // Event listeners
