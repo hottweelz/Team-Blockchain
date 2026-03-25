@@ -48,7 +48,7 @@ export default {
                 const rawItems = json?.rss?.channel?.item;
                 const itemsArray = Array.isArray(rawItems) ? rawItems : (rawItems ? [rawItems] : []);
 
-                const items = itemsArray.map(item => ({
+                const items = itemsArray.slice(0, 5).map(item => ({
                     title: item.title,
                     link: item.link,
                     pubDate: item.pubDate,
