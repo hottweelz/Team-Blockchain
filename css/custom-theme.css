@@ -105,7 +105,7 @@
   pointer-events: none;
 }
 
-.hero-section > * {
+.hero-section>* {
   position: relative;
   z-index: 1;
 }

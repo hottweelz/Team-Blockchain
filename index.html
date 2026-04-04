@@ -53,7 +53,7 @@
   <meta name="twitter:image" content="https://www.teamblockchain.net/img/teamblockchain_hero.png">
   <meta name="twitter:image:alt" content="TeamBlockchain Digital Bytes - Blockchain and Digital Asset Insights">
 
-  <!-- Structured Data: Organization & Website -->
+  <!-- Consolidated JSON-LD Schema: All Entity & Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,9 +90,7 @@
           "@type": "ContactPoint",
           "email": "info@teamblockchain.net",
           "contactType": "Customer Service",
-          "availableLanguage": [
-            "en"
-          ],
+          "availableLanguage": ["en"],
           "url": "https://www.teamblockchain.net/"
         }
       },
@@ -121,7 +119,6 @@
         "description": "Weekly blockchain and digital asset insights, news, and analysis from TeamBlockchain. Stay updated with the latest trends, podcasts, and expert commentary.",
         "inLanguage": "en-US"
       },
-
       {
         "@type": "BreadcrumbList",
         "@id": "https://www.teamblockchain.net/#breadcrumb",
@@ -133,112 +130,96 @@
             "item": "https://www.teamblockchain.net/"
           }
         ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Enhanced Structured Data for Rich Results -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is blockchain technology?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Blockchain is a decentralized digital ledger technology that records transactions across multiple computers, ensuring transparency, security, and immutability. It forms the foundation for cryptocurrencies, smart contracts, and distributed applications across industries."
-        }
       },
       {
-        "@type": "Question",
-        "name": "What is cryptocurrency and how does it work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cryptocurrency is a digital currency secured by cryptography and operates on blockchain networks. Unlike traditional currencies controlled by governments, cryptocurrencies like Bitcoin and Ethereum are decentralized, enabling peer-to-peer transactions without intermediaries."
-        }
+        "@type": "FAQPage",
+        "@id": "https://www.teamblockchain.net/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is blockchain technology?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Blockchain is a decentralized digital ledger technology that records transactions across multiple computers, ensuring transparency, security, and immutability. It forms the foundation for cryptocurrencies, smart contracts, and distributed applications across industries."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is cryptocurrency and how does it work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cryptocurrency is a digital currency secured by cryptography and operates on blockchain networks. Unlike traditional currencies controlled by governments, cryptocurrencies like Bitcoin and Ethereum are decentralized, enabling peer-to-peer transactions without intermediaries."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Web3 and DeFi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Web3 refers to the next generation of the internet built on decentralized technologies like blockchain. DeFi (Decentralized Finance) enables financial services—lending, trading, yield farming—without traditional banks, using smart contracts on blockchain networks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Digital Bytes by TeamBlockchain?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Digital Bytes is a weekly blockchain and digital asset insights platform providing comprehensive analysis, news, and expert commentary through our newsletter and podcast. We cover blockchain developments, market analysis, regulatory updates, and industry trends."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I subscribe to Digital Bytes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can access our content through our weekly newsletter on Substack and our Digital Bytes Podcast available on Spotify and Cyber.FM. Both are free to access, with premium subscription options available for exclusive content and early access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What topics does Digital Bytes cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We provide coverage of blockchain technology developments, digital asset market analysis, cryptocurrency regulatory updates, DeFi protocols and smart contracts, Web3 innovations, and expert interviews on emerging trends in the blockchain ecosystem."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who hosts the Digital Bytes Podcast?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TeamBlockchain experts host the Digital Bytes Podcast, including Jonny Fry (CEO) and James Tylee (FinTech expert and media host), bringing over 20+ years of financial services and blockchain expertise to weekly discussions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I contribute as a guest expert?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We welcome guest contributions and expert collaborations. Contact info@teamblockchain.net to discuss guest opportunities, podcast appearances, or collaborative content featuring your blockchain expertise and insights."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can blockchain improve my business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Blockchain can enhance supply chain transparency, reduce transaction costs, enable smart contract automation, improve data security, and create new revenue streams through tokenization. Our newsletter and podcast explore real-world enterprise blockchain applications."
+            }
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "What is Web3 and DeFi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Web3 refers to the next generation of the internet built on decentralized technologies like blockchain. DeFi (Decentralized Finance) enables financial services—lending, trading, yield farming—without traditional banks, using smart contracts on blockchain networks."
-        }
+        "@type": "PodcastSeries",
+        "@id": "https://www.teamblockchain.net/#podcast",
+        "name": "Digital Bytes Podcast",
+        "description": "Weekly radio show, powered by both Spotify and Cyber.FM featuring expert discussions, interviews, and analysis of the latest developments in blockchain and digital assets.",
+        "url": "https://www.teamblockchain.net/#podcast",
+        "author": {
+          "@id": "https://www.teamblockchain.net/#organization"
+        },
+        "webFeed": "https://teamblockchain.cyberfm.workers.dev/api/podcast"
       },
-      {
-        "@type": "Question",
-        "name": "What is Digital Bytes by TeamBlockchain?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Digital Bytes is a weekly blockchain and digital asset insights platform providing comprehensive analysis, news, and expert commentary through our newsletter and podcast. We cover blockchain developments, market analysis, regulatory updates, and industry trends."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I subscribe to Digital Bytes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can access our content through our weekly newsletter on Substack and our Digital Bytes Podcast available on Spotify and Cyber.FM. Both are free to access, with premium subscription options available for exclusive content and early access."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What topics does Digital Bytes cover?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We provide coverage of blockchain technology developments, digital asset market analysis, cryptocurrency regulatory updates, DeFi protocols and smart contracts, Web3 innovations, and expert interviews on emerging trends in the blockchain ecosystem."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Who hosts the Digital Bytes Podcast?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "TeamBlockchain experts host the Digital Bytes Podcast, including Jonny Fry (CEO) and James Tylee (FinTech expert and media host), bringing over 20+ years of financial services and blockchain expertise to weekly discussions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I contribute as a guest expert?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! We welcome guest contributions and expert collaborations. Contact info@teamblockchain.net to discuss guest opportunities, podcast appearances, or collaborative content featuring your blockchain expertise and insights."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can blockchain improve my business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Blockchain can enhance supply chain transparency, reduce transaction costs, enable smart contract automation, improve data security, and create new revenue streams through tokenization. Our newsletter and podcast explore real-world enterprise blockchain applications."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "PodcastSeries",
-    "@id": "https://www.teamblockchain.net/#podcast",
-    "name": "Digital Bytes Podcast",
-    "description": "Weekly radio show, powered by both Spotify and Cyber.FM featuring expert discussions, interviews, and analysis of the latest developments in blockchain and digital assets.",
-    "url": "https://www.teamblockchain.net/#podcast",
-    "author": {
-      "@id": "https://www.teamblockchain.net/#organization"
-    },
-    "webFeed": "https://teamblockchain.cyberfm.workers.dev/api/podcast"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
       {
         "@type": "Person",
         "@id": "https://www.teamblockchain.net/#jonny-fry",
@@ -256,7 +237,7 @@
         "@id": "https://www.teamblockchain.net/#james-tylee",
         "name": "James Tylee",
         "jobTitle": "Podcast Host",
-        "description": "Co-Host of the Digital Bytes Podcast. James is Certified Fintech Professional in TradFi, Bitcoin and Ethereum. He is also experienced in broadcast media and has over 25 years experience working in financial services. He is also a CoFounder at Cyber-FM radio.",
+        "description": "Co-Host of the Digital Bytes Podcast. <a href='https://james.tyl.ee'>James</a> is a Certified Fintech Professional in TradFi, Bitcoin and Ethereum. He is also experienced in broadcast media and has over 25 years experience working in financial services. He is also a CoFounder at <a href='https://cyber.fm'>Cyber-FM radio</a>.",
         "image": "https://www.teamblockchain.net/img/webp/james_tylee.webp",
         "worksFor": {
           "@id": "https://www.teamblockchain.net/#organization"
@@ -543,8 +524,12 @@
             <span class="h5 text-secondary fw-lighter mb-3 d-block">Welcome to</span>
             <h1 id="hero-heading" class="display-1 fw-bold mb-4" style="font-size: clamp(3rem, 8vw, 6rem);">Digital
               Bytes</h1>
-            <p class="lead fs-3 mb-5 text-secondary">Your weekly dose of blockchain insights, analysis, and expert
-              commentary</p>
+            <p class="lead fs-3 mb-5 text-secondary">Professional blockchain insights published every week by expert
+              analysts with 20+ years in financial services — covering Bitcoin, Ethereum, DeFi, and regulatory
+              developments across 100+ jurisdictions</p>
+            <p class="text-secondary small mb-4">
+              <span style="opacity: 0.7;">Last updated: April 4, 2026</span>
+            </p>
 
             <div class="row g-4 mt-5">
               <div class="col-md-6">

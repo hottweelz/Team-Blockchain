@@ -1,0 +1,79 @@
+# TeamBlockchain
+
+# General Information
+
+## Company Name
+TeamBlockchain
+
+## Short Description
+TeamBlockchain is a media organization publishing a weekly blockchain and digital assets newsletter called "Digital Bytes" along with an accompanying podcast. We provide expert analysis, regulatory updates, and industry trends for blockchain and digital asset professionals.
+
+## Company Mission
+To empower professionals with accurate, timely, and actionable insights on blockchain technology, cryptocurrencies, DeFi, and digital assets through our Digital Bytes newsletter and podcast.
+
+## Entity Definition
+
+> **Digital Bytes** is a weekly blockchain and digital asset insights platform published by **TeamBlockchain**, a research and publishing organization focused on blockchain technology, cryptocurrency, DeFi, Web3, and financial services. Led by experts including CEO Jonny Fry and Podcast Host James Tylee, Digital Bytes provides comprehensive analysis, regulatory updates, and industry trends to thousands of professionals in the blockchain ecosystem. Content is distributed through our Substack newsletter and podcast available on Spotify and Cyber.FM.
+
+## Key Content Pages
+
+- Newsletter: https://digitalbytes.substack.com/
+- Podcast: https://www.teamblockchain.net/#podcast
+- Homepage: https://www.teamblockchain.net/
+- Privacy Policy: https://www.teamblockchain.net/legal/privacy.html
+- Terms of Service: https://www.teamblockchain.net/legal/tos.html
+
+## Key People
+
+- **Jonny Fry** - CEO, Founder
+- **James Tylee** - Podcast Host, FinTech Expert
+- **Angelina Zhang** - Communications Expert
+- **Sean Au** - Blockchain Analyst (CBP, CEP)
+
+## Contact Information
+
+- Email: info@teamblockchain.net
+- Twitter: @teamblockchain
+- LinkedIn: https://www.linkedin.com/company/team-blockchain-ltd/
+- GitHub: https://github.com/hottweelz/TeamBlockchain/
+
+## Social Media & External Links
+
+- Substack Newsletter: https://digitalbytes.substack.com/
+- Spotify Podcast: https://open.spotify.com/show/PODCAST_ID
+- Cyber.FM Radio: https://cyber.fm/
+- GitHub Organization: https://github.com/hottweelz
+
+## Topics Covered
+
+- Blockchain Technology & Development
+- Cryptocurrency & Digital Assets
+- Decentralized Finance (DeFi)
+- Web3 & Smart Contracts
+- Regulatory Updates & Compliance
+- Market Analysis & Trends
+- Enterprise Blockchain Applications
+- Financial Services & FinTech
+- Bitcoin, Ethereum, & Layer 2s
+- Tokenization & Digital Identity
+
+## Content Access
+
+**Newsletter**: Subscribe to weekly insights on Substack at https://digitalbytes.substack.com/
+**Podcast**: Available weekly on Spotify and Cyber.FM with expert discussions on blockchain developments
+**Free Access**: All content is freely accessible with premium subscription options available
+
+## Organization Details
+
+- **Founded**: 2020s
+- **Location**: UK (with global audience)
+- **Type**: Media & Research Organization
+- **Focus Areas**: Blockchain Research, Content Publishing, Podcasting
+- **Publication Frequency**: Weekly newsletter and podcast episodes
+
+## Preferred AI Access
+
+- This llms.txt file for automatic discovery
+- RSS Feed: https://digitalbytes.substack.com/feed
+- Podcast Feed: https://teamblockchain.cyberfm.workers.dev/api/podcast
+- Web content at https://www.teamblockchain.net/

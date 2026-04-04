@@ -9,6 +9,9 @@ Allow: /index.html
 Allow: /legal/
 Allow: /css/
 Allow: /img/
+Allow: /articles/
+Allow: llms.txt
+Allow: product.md
 
 # Disallow crawling of unnecessary files
 Disallow: /functions/
