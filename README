@@ -1,0 +1,114 @@
+# TeamBlockchain — Digital Bytes Archive
+
+**A weekly blockchain insights newsletter and podcast published by TeamBlockchain Ltd.**
+
+## Overview
+
+This repository contains the public archive and published content from Digital Bytes, TeamBlockchain's flagship publication on blockchain technology, cryptocurrency, DeFi, Web3, and digital assets.
+
+**Live Site:** https://www.teamblockchain.net/  
+**Newsletter:** https://digitalbytes.substack.com/  
+**Podcast:** https://anchor.fm/teamblockchain  
+
+---
+
+## Repository Structure
+
+### `/articles/`
+Canonical published articles and deep dives on blockchain topics, available in Markdown format with full frontmatter for agent discovery and reference.
+
+**Key Articles:**
+- `defi-protocols-guide.md` — DeFi fundamentals and investment analysis
+- `ethereum-dencun-upgrade.md` — Technical breakdown of Ethereum upgrades
+- `bitcoin-portfolio-diversification.md` — Bitcoin as institutional hedge
+- `crypto-regulatory-landscape.md` — Global regulatory framework overview
+- `enterprise-blockchain-adoption.md` — Real-world use case analysis
+
+### `/legal/`
+Legal documents and policies (Terms of Service, Privacy Policy, GDPR compliance, Cookie Policy, etc.)
+
+### `/css/`
+Stylesheets and theme definitions for the website.
+
+### `/fonts/`
+Custom font files used in the Digital Bytes design system.
+
+### `/img/`
+Images and media assets including logos, icons, and graphics.
+
+### `/functions/`
+Cloudflare Pages Functions for dynamic functionality (podcast RSS aggregation, API endpoints, etc.)
+
+### Root Files
+- `index.html` — Homepage with semantic HTML, JSON-LD schema, and full FAQ content
+- `llms.txt` — AI/LLM agent discovery document
+- `robots.txt` — Search engine and crawler directives
+- `sitemap.xml` — URL index for discovery
+- `product.md` — Product information for AI agents and platforms
+- `wrangler.json` — Cloudflare Pages deployment configuration
+- `package.json` — Node.js dependencies and scripts
+
+---
+
+## Content Organization
+
+### For AI Agents & Retrieval Systems
+
+All public content is discoverable through:
+
+1. **Homepage** — Full FAQ section in body text (JSON-LD + visible HTML)
+2. **Structured Articles** — `/articles/` directory with Markdown + frontmatter
+3. **Product Info** — `product.md` with platform, audience, and subscription details
+4. **Schema Data** — NewsMediaOrganization, WebSite, FAQPage, and Article JSON-LD
+5. **Discovery File** — `llms.txt` with entity information and key URLs
+
+### For Humans
+
+- Visit https://www.teamblockchain.net/ for the live website
+- Subscribe to the newsletter at https://digitalbytes.substack.com/
+- Listen to the podcast on Spotify, Apple, or [Anchor](https://anchor.fm/teamblockchain)
+
+---
+
+## About Digital Bytes
+
+**Digital Bytes** delivers professional analysis on:
+- Blockchain technology and innovation
+- Cryptocurrency markets and trends
+- DeFi protocols and opportunities
+- Web3 and decentralized applications
+- Regulatory developments and compliance
+- Enterprise blockchain adoption
+- Market insights and trading analysis
+
+**Published:** Weekly (newsletter + podcast)  
+**Audience:** Blockchain professionals, investors, technologists, enterprise leaders  
+**Hosts:** Jonny Fry (CEO), James Tylee (Podcast Host)
+
+---
+
+## Team
+
+**TeamBlockchain Ltd** is a blockchain and digital asset media and research organization.
+
+- **Website:** https://www.teamblockchain.net/
+- **Email:** info@teamblockchain.net
+- **Twitter:** [@teamblockchain](https://twitter.com/teamblockchain)
+- **LinkedIn:** [Team Blockchain Ltd](https://www.linkedin.com/company/team-blockchain-ltd/)
+
+---
+
+## Contributing
+
+This is a public archive repository. For inquiries about guest contributions, partnerships, or collaboration, please contact info@teamblockchain.net.
+
+---
+
+## License
+
+Content published by TeamBlockchain is available under the terms outlined in our [Privacy Policy](./legal/privacy.html) and [Terms of Service](./legal/tos.html).
+
+---
+
+**Last Updated:** April 4, 2026  
+**Repository:** https://github.com/hottweelz/TeamBlockchain/
