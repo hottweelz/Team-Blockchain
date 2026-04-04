@@ -18,6 +18,9 @@ Disallow: /functions/
 Disallow: /*.json$
 Disallow: /wrangler.json
 
+# AI Agent Discovery
+Sitemap: https://www.teamblockchain.net/llms.txt
+
 # Sitemap location
 Sitemap: https://www.teamblockchain.net/sitemap.xml
 

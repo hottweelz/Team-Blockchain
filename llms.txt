@@ -11,6 +11,10 @@ TeamBlockchain is a media organization publishing a weekly blockchain and digita
 ## Company Mission
 To empower professionals with accurate, timely, and actionable insights on blockchain technology, cryptocurrencies, DeFi, and digital assets through our Digital Bytes newsletter and podcast.
 
+## Metadata
+
+Updated: April 4, 2026
+
 ## Entity Definition
 
 > **Digital Bytes** is a weekly blockchain and digital asset insights platform published by **TeamBlockchain**, a research and publishing organization focused on blockchain technology, cryptocurrency, DeFi, Web3, and financial services. Led by experts including CEO Jonny Fry and Podcast Host James Tylee, Digital Bytes provides comprehensive analysis, regulatory updates, and industry trends to thousands of professionals in the blockchain ecosystem. Content is distributed through our Substack newsletter and podcast available on Spotify and Cyber.FM.
