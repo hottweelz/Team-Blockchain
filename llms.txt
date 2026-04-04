@@ -24,6 +24,9 @@ Updated: April 4, 2026
 - Newsletter: https://digitalbytes.substack.com/
 - Podcast: https://www.teamblockchain.net/#podcast
 - Homepage: https://www.teamblockchain.net/
+- Product Information: https://www.teamblockchain.net/product.html
+- Product (Markdown): https://www.teamblockchain.net/product.md
+- Brand Guidelines: https://www.teamblockchain.net/brand.md
 - Privacy Policy: https://www.teamblockchain.net/legal/privacy.html
 - Terms of Service: https://www.teamblockchain.net/legal/tos.html
 

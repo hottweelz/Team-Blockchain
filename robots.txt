@@ -10,8 +10,11 @@ Allow: /legal/
 Allow: /css/
 Allow: /img/
 Allow: /articles/
+Allow: /podcast/
 Allow: llms.txt
 Allow: product.md
+Allow: product.html
+Allow: brand.md
 
 # Disallow crawling of unnecessary files
 Disallow: /functions/
