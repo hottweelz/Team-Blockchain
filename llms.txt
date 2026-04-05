@@ -13,7 +13,11 @@ To empower professionals with accurate, timely, and actionable insights on block
 
 ## Metadata
 
-Updated: April 4, 2026
+Updated: April 5, 2026
+
+## AI Crawler Access
+
+All AI and LLM crawlers are explicitly permitted. See robots.txt for GPTBot, ClaudeBot, and PerplexityBot directives.
 
 ## Entity Definition
 

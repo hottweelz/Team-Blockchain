@@ -1,8 +1,10 @@
 ---
 title: "TeamBlockchain Brand Guidelines"
 description: "Brand identity, voice, mission, and visual guidelines for Digital Bytes by TeamBlockchain"
+author: "TeamBlockchain"
 version: "1.0"
-updated: "2026-04-04"
+datePublished: "2026-04-04"
+dateModified: "2026-04-05"
 ---
 
 # TeamBlockchain Brand Identity

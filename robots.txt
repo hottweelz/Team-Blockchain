@@ -4,6 +4,16 @@
 User-agent: *
 Allow: /
 
+# AI Agent & LLM Access
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 # Allow crawling of all main content
 Allow: /index.html
 Allow: /legal/

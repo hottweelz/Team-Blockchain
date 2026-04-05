@@ -1,7 +1,10 @@
 ---
 title: "Digital Bytes - Product Information"
 description: "Digital Bytes is a weekly blockchain and digital assets newsletter and podcast providing expert analysis, regulatory updates, and industry trends."
-updated: "2026-04-04"
+author: "TeamBlockchain"
+datePublished: "2026-04-04"
+dateModified: "2026-04-05"
+version: "1.0"
 ---
 
 # Digital Bytes Product
