@@ -3,8 +3,13 @@ title: "Digital Bytes - Product Information"
 description: "Digital Bytes is a weekly blockchain and digital assets newsletter and podcast providing expert analysis, regulatory updates, and industry trends."
 author: "TeamBlockchain"
 datePublished: "2026-04-04"
-dateModified: "2026-04-05"
+dateModified: "2026-04-07"
 version: "1.0"
+sameAs:
+  - "https://digitalbytes.substack.com/"
+  - "https://open.spotify.com/show/0wxqlnCDOlk5NXiEtaJYKr"
+  - "https://www.linkedin.com/company/team-blockchain-ltd/"
+  - "https://www.teamblockchain.net/#organization"
 ---
 
 # Digital Bytes Product

@@ -4,7 +4,11 @@ description: "Brand identity, voice, mission, and visual guidelines for Digital 
 author: "TeamBlockchain"
 version: "1.0"
 datePublished: "2026-04-04"
-dateModified: "2026-04-05"
+dateModified: "2026-04-07"
+sameAs:
+  - "https://www.teamblockchain.net/#organization"
+  - "https://www.linkedin.com/company/team-blockchain-ltd/"
+  - "https://twitter.com/teamblockchain"
 ---
 
 # TeamBlockchain Brand Identity
