@@ -1,10 +1,14 @@
 ---
 title: "Regulatory Landscape for Cryptocurrency: Global Developments and Implications"
 date: 2024-03-07
+dateModified: "2026-04-07"
 author: "Jonny Fry"
 description: "Comprehensive review of cryptocurrency regulatory developments across major jurisdictions, including MiCA in Europe, regulations in the US and Asia, and implications for market participants."
 keywords: "cryptocurrency regulation, MiCA, compliance, financial regulation, blockchain policy, digital assets, regulatory risk"
 published: true
+sameAs:
+  - "https://www.teamblockchain.net/#organization"
+  - "https://digitalbytes.substack.com/"
 ---
 
 # Regulatory Landscape for Cryptocurrency: Global Developments and Implications

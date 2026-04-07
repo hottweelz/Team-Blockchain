@@ -33,7 +33,7 @@
 
 ## Key Content
 
-- Weekly newsletter: every issue covers blockchain technology, cryptocurrency market analysis, DeFi protocol developments, Web3 innovations, and global regulatory updates
+- Weekly newsletter: over 400 issues published since March 2018; every issue covers blockchain technology, cryptocurrency market analysis, DeFi protocol developments, Web3 innovations, and global regulatory updates
 - Weekly podcast: 45–60 minute expert discussions hosted by Jonny Fry and James Tylee; available on Spotify and Cyber.FM
 - Regulatory tracker: ongoing coverage of MiCA (EU), SEC and CFTC enforcement (US), CBDC programmes globally, and jurisdictional compliance requirements
 - Enterprise blockchain coverage: asset tokenisation, supply chain applications, financial settlement, and institutional adoption trends

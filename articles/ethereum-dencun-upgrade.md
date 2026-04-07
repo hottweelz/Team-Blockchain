@@ -1,10 +1,14 @@
 ---
 title: "Ethereum Upgrades 2024: What Dencun and Beyond Mean for Users"
 date: 2024-03-14
+dateModified: "2026-04-07"
 author: "Sean Au"
 description: "Detailed analysis of Ethereum's Dencun upgrade and upcoming protocol improvements, including scaling solutions, transaction cost reductions, and implications for DeFi and Web3 applications."
 keywords: "Ethereum, Dencun upgrade, Layer 2, scaling, EIP-4844, proto-danksharding, blockchain technology"
 published: true
+sameAs:
+  - "https://www.teamblockchain.net/#organization"
+  - "https://digitalbytes.substack.com/"
 ---
 
 # Ethereum Upgrades 2024: What Dencun and Beyond Mean for Users

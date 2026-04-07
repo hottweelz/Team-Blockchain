@@ -3,7 +3,11 @@ title: "Bitcoin's Role in Modern Finance"
 description: "Exploring Bitcoin as institutional hedge, store of value, and portfolio diversification tool in 2026. Expert analysis of adoption trends and market dynamics."
 author: "James Tylee"
 date: "2026-03-28"
+dateModified: "2026-04-07"
 updated: "2026-03-28"
+sameAs:
+  - "https://www.teamblockchain.net/#podcast"
+  - "https://open.spotify.com/show/0wxqlnCDOlk5NXiEtaJYKr"
 duration: 52
 topics: 
   - Bitcoin

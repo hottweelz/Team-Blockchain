@@ -3,7 +3,11 @@ title: "Ethereum Scalability Solutions Explained"
 description: "Deep dive into Layer 2 scaling, rollups, and Ethereum's path to mass adoption. Technical and business implications of Arbitrum, Optimism, and others."
 author: "James Tylee"
 date: "2026-03-21"
+dateModified: "2026-04-07"
 updated: "2026-03-21"
+sameAs:
+  - "https://www.teamblockchain.net/#podcast"
+  - "https://open.spotify.com/show/0wxqlnCDOlk5NXiEtaJYKr"
 duration: 48
 topics:
   - Ethereum

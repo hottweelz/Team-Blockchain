@@ -1,10 +1,14 @@
 ---
 title: "Bitcoin's Role in Portfolio Diversification: 2024 Perspective"
 date: 2024-03-21
+dateModified: "2026-04-07"
 author: "James Tylee"
 description: "Analyze how Bitcoin functions as a hedge against inflation and portfolio diversification tool, with insights into strategic allocation and regulatory considerations for institutional investors."
 keywords: "Bitcoin, portfolio diversification, cryptocurrency investment, institutional adoption, risk management, inflation hedge"
 published: true
+sameAs:
+  - "https://www.teamblockchain.net/#organization"
+  - "https://digitalbytes.substack.com/"
 ---
 
 # Bitcoin's Role in Portfolio Diversification: 2024 Perspective

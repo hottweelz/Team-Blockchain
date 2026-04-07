@@ -1,10 +1,14 @@
 ---
 title: "Understanding DeFi Protocols: A Comprehensive Guide for Investors"
 date: 2024-03-28
+dateModified: "2026-04-07"
 author: "Jonny Fry"
 description: "Explore the fundamentals of Decentralized Finance (DeFi) protocols, how they work, and what risks investors should consider before participating in DeFi platforms."
 keywords: "DeFi, decentralized finance, blockchain, cryptocurrency, protocols, smart contracts, yield farming, liquidity pools"
 published: true
+sameAs:
+  - "https://www.teamblockchain.net/#organization"
+  - "https://digitalbytes.substack.com/"
 ---
 
 # Understanding DeFi Protocols: A Comprehensive Guide for Investors

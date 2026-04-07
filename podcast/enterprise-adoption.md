@@ -3,7 +3,11 @@ title: "Enterprise Blockchain: Real-World Adoption"
 description: "From pilots to production. How enterprises use blockchain for supply chain, settlement, and asset tokenization. ROI and lessons learned from Fortune 500 implementations."
 author: "James Tylee"
 date: "2026-02-28"
+dateModified: "2026-04-07"
 updated: "2026-02-28"
+sameAs:
+  - "https://www.teamblockchain.net/#podcast"
+  - "https://open.spotify.com/show/0wxqlnCDOlk5NXiEtaJYKr"
 duration: 49
 topics:
   - Enterprise

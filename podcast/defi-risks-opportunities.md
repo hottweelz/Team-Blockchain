@@ -3,7 +3,11 @@ title: "DeFi Risks and Opportunities in 2026"
 description: "Balancing security, yield, and adoption in DeFi. Analysis of protocol risks, liquidity trends, and emerging opportunities for investors and developers."
 author: "James Tylee"
 date: "2026-03-14"
+dateModified: "2026-04-07"
 updated: "2026-03-14"
+sameAs:
+  - "https://www.teamblockchain.net/#podcast"
+  - "https://open.spotify.com/show/0wxqlnCDOlk5NXiEtaJYKr"
 duration: 55
 topics:
   - DeFi

@@ -3,7 +3,11 @@ title: "Regulatory Framework for Digital Assets"
 description: "Global regulatory landscape for cryptocurrency and digital assets. MiCA in EU, SEC framework in US, and emerging standards for institutional adoption."
 author: "James Tylee"
 date: "2026-03-07"
+dateModified: "2026-04-07"
 updated: "2026-03-07"
+sameAs:
+  - "https://www.teamblockchain.net/#podcast"
+  - "https://open.spotify.com/show/0wxqlnCDOlk5NXiEtaJYKr"
 duration: 51
 topics:
   - Regulation
