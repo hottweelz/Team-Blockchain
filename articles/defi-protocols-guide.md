@@ -11,6 +11,30 @@ sameAs:
   - "https://digitalbytes.substack.com/"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Understanding DeFi Protocols: A Comprehensive Guide for Investors",
+  "description": "Explore the fundamentals of Decentralized Finance (DeFi) protocols, how they work, and what risks investors should consider before participating in DeFi platforms.",
+  "url": "https://www.teamblockchain.net/articles/defi-protocols-guide.md",
+  "datePublished": "2024-03-28",
+  "dateModified": "2026-04-07",
+  "author": {
+    "@type": "Person",
+    "name": "Jonny Fry",
+    "url": "https://www.teamblockchain.net/#jonny-fry"
+  },
+  "publisher": {
+    "@id": "https://www.teamblockchain.net/#organization"
+  },
+  "isPartOf": {
+    "@id": "https://www.teamblockchain.net/#website"
+  },
+  "about": ["DeFi", "Decentralized Finance", "Smart Contracts", "Yield Farming", "Blockchain"]
+}
+</script>
+
 # Understanding DeFi Protocols: A Comprehensive Guide for Investors
 
 ## Introduction

@@ -11,6 +11,30 @@ sameAs:
   - "https://digitalbytes.substack.com/"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Regulatory Landscape for Cryptocurrency: Global Developments and Implications",
+  "description": "Comprehensive review of cryptocurrency regulatory developments across major jurisdictions, including MiCA in Europe, regulations in the US and Asia, and implications for market participants.",
+  "url": "https://www.teamblockchain.net/articles/crypto-regulatory-landscape.md",
+  "datePublished": "2024-03-07",
+  "dateModified": "2026-04-07",
+  "author": {
+    "@type": "Person",
+    "name": "Jonny Fry",
+    "url": "https://www.teamblockchain.net/#jonny-fry"
+  },
+  "publisher": {
+    "@id": "https://www.teamblockchain.net/#organization"
+  },
+  "isPartOf": {
+    "@id": "https://www.teamblockchain.net/#website"
+  },
+  "about": ["Cryptocurrency Regulation", "MiCA", "SEC", "Digital Assets", "Compliance"]
+}
+</script>
+
 # Regulatory Landscape for Cryptocurrency: Global Developments and Implications
 
 ## Executive Summary

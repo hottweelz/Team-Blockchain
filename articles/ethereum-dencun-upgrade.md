@@ -11,6 +11,30 @@ sameAs:
   - "https://digitalbytes.substack.com/"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ethereum Upgrades 2024: What Dencun and Beyond Mean for Users",
+  "description": "Detailed analysis of Ethereum's Dencun upgrade and upcoming protocol improvements, including scaling solutions, transaction cost reductions, and implications for DeFi and Web3 applications.",
+  "url": "https://www.teamblockchain.net/articles/ethereum-dencun-upgrade.md",
+  "datePublished": "2024-03-14",
+  "dateModified": "2026-04-07",
+  "author": {
+    "@type": "Person",
+    "name": "Sean Au",
+    "url": "https://www.teamblockchain.net/#sean-au"
+  },
+  "publisher": {
+    "@id": "https://www.teamblockchain.net/#organization"
+  },
+  "isPartOf": {
+    "@id": "https://www.teamblockchain.net/#website"
+  },
+  "about": ["Ethereum", "Dencun Upgrade", "Layer 2", "EIP-4844", "Blockchain Scaling"]
+}
+</script>
+
 # Ethereum Upgrades 2024: What Dencun and Beyond Mean for Users
 
 ## Overview

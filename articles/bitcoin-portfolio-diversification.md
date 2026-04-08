@@ -11,6 +11,30 @@ sameAs:
   - "https://digitalbytes.substack.com/"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bitcoin's Role in Portfolio Diversification: 2024 Perspective",
+  "description": "Analyze how Bitcoin functions as a hedge against inflation and portfolio diversification tool, with insights into strategic allocation and regulatory considerations for institutional investors.",
+  "url": "https://www.teamblockchain.net/articles/bitcoin-portfolio-diversification.md",
+  "datePublished": "2024-03-21",
+  "dateModified": "2026-04-07",
+  "author": {
+    "@type": "Person",
+    "name": "James Tylee",
+    "url": "https://james.tyl.ee"
+  },
+  "publisher": {
+    "@id": "https://www.teamblockchain.net/#organization"
+  },
+  "isPartOf": {
+    "@id": "https://www.teamblockchain.net/#website"
+  },
+  "about": ["Bitcoin", "Portfolio Diversification", "Cryptocurrency Investment", "Institutional Adoption"]
+}
+</script>
+
 # Bitcoin's Role in Portfolio Diversification: 2024 Perspective
 
 ## Executive Summary
