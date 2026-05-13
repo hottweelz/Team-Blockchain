@@ -10,6 +10,8 @@ sameAs:
   - "https://open.spotify.com/show/0wxqlnCDOlk5NXiEtaJYKr"
   - "https://www.linkedin.com/company/team-blockchain-ltd/"
   - "https://www.teamblockchain.net/#organization"
+  - "https://www.wikidata.org/wiki/Q139066656"
+  - "https://www.crunchbase.com/organization/team-blockchain"
 ---
 
 # Digital Bytes Product
@@ -152,7 +154,7 @@ sameAs:
 
 ## Updates & Freshness
 
-- **Last Updated**: April 4, 2026
+- **Last Updated**: April 7, 2026
 - **Update Frequency**: Weekly (aligned with publication schedule)
 - **Next Content**: Substack and podcast updates every week
 

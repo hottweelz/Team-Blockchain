@@ -9,11 +9,13 @@ sameAs:
   - "https://www.teamblockchain.net/#organization"
   - "https://www.linkedin.com/company/team-blockchain-ltd/"
   - "https://twitter.com/teamblockchain"
+  - "https://www.wikidata.org/wiki/Q139066656"
+  - "https://www.crunchbase.com/organization/team-blockchain"
 ---
 
 # TeamBlockchain Brand Identity
 
-**Last Updated:** April 4, 2026  
+**Last Updated:** April 7, 2026  
 **Version:** 1.0
 
 ---

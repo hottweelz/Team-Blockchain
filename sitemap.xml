@@ -2,70 +2,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.teamblockchain.net/</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.teamblockchain.net/#newsletter</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.teamblockchain.net/#podcast</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.teamblockchain.net/#about</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.teamblockchain.net/legal/privacy.html</loc>
+    <loc>https://www.teamblockchain.net/legal/privacy</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.teamblockchain.net/legal/tos.html</loc>
+    <loc>https://www.teamblockchain.net/legal/tos</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.teamblockchain.net/legal/cookies.html</loc>
+    <loc>https://www.teamblockchain.net/legal/cookies</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.teamblockchain.net/legal/gdpr.html</loc>
+    <loc>https://www.teamblockchain.net/legal/gdpr</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.teamblockchain.net/legal/us-privacy.html</loc>
+    <loc>https://www.teamblockchain.net/legal/us-privacy</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.teamblockchain.net/legal/esg.html</loc>
+    <loc>https://www.teamblockchain.net/legal/esg</loc>
+    <lastmod>2026-04-15</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+   <url>
+    <loc>https://www.teamblockchain.net/legal/legal</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.teamblockchain.net/legal/legal.html</loc>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
-  </url>  <url>
-    <loc>https://www.teamblockchain.net/product.html</loc>
+    <loc>https://www.teamblockchain.net/product</loc>
+    <lastmod>2026-04-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.teamblockchain.net/product.md</loc>
+    <lastmod>2026-04-07</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.teamblockchain.net/brand.md</loc>
+    <lastmod>2026-04-07</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
-  </url></urlset>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/articles/bitcoin-portfolio-diversification.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/articles/crypto-regulatory-landscape.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/articles/defi-protocols-guide.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/articles/enterprise-blockchain-adoption.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/articles/ethereum-dencun-upgrade.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/podcast/bitcoin-modern-finance.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/podcast/defi-risks-opportunities.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/podcast/digital-asset-regulation.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/podcast/enterprise-adoption.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.teamblockchain.net/podcast/ethereum-scalability.md</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>

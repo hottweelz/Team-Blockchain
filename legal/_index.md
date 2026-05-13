@@ -13,12 +13,12 @@ Official legal documents and policies for TeamBlockchain and Digital Bytes.
 
 | Document | Purpose |
 |----------|---------|
-| [Terms of Service](./tos.html) | User agreement and service terms |
-| [Privacy Policy](./privacy.html) | Personal data handling and privacy rights |
-| [GDPR Compliance](./gdpr.html) | EU GDPR compliance information |
-| [Cookie Policy](./cookies.html) | Cookie usage and tracking disclosure |
-| [US Privacy](./us-privacy.html) | US state privacy rights (CCPA, etc.) |
-| [ESG Policy](./esg.html) | Environmental, social, and governance commitments |
+| [Terms of Service](./tos) | User agreement and service terms |
+| [Privacy Policy](./privacy) | Personal data handling and privacy rights |
+| [GDPR Compliance](./gdpr) | EU GDPR compliance information |
+| [Cookie Policy](./cookies) | Cookie usage and tracking disclosure |
+| [US Privacy](./us-privacy) | US state privacy rights (CCPA, etc.) |
+| [ESG Policy](./esg) | Environmental, social, and governance commitments |
 
 ## Contact
 
