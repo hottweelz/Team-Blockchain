@@ -96,3 +96,50 @@ Next recommended steps:
 
 Notes for next agent:
 - Do not stage `.ai/`, `.codex/`, `AGENTS.md`, `GEMINI.md`, or `img/.DS_Store` as part of this optimization change unless the user explicitly asks.
+
+### 2026-05-13 18:47 local — Codex
+
+Task:
+- Add HTML inbound discovery links for markdown companion files.
+
+Selected agent team:
+- engineering-llm-optimization-agent: add crawler-visible HTML discovery for markdown companions.
+- engineering-minimal-change-engineer: limit the follow-up to homepage and product-page discovery surfaces.
+- engineering-git-workflow-master: keep the follow-up in a separate atomic commit.
+
+Changes made:
+- Added `rel="alternate" type="text/markdown"` tags on the homepage for `brand.md`, `product.md`, and all article/podcast companion markdown files.
+- Added a compact footer link block on the homepage pointing to the same markdown resources.
+- Added `rel="alternate" type="text/markdown"` tags plus a compact footer discovery block on the product page.
+
+Files touched:
+- CHANGELOG_AI.md
+- index.html
+- product.html
+
+Commands/tests run:
+
+```bash
+sed -n '1,80p' index.html
+sed -n '1030,1125p' index.html
+sed -n '1,70p' product.html
+sed -n '385,425p' product.html
+rg -n 'rel="alternate"|type="text/markdown"|brand\.md|product\.md|articles/.+\.md|podcast/.+\.md' index.html product.html
+git diff --stat -- index.html product.html
+```
+
+Results:
+- Companion markdown files are now discoverable from HTML inbound links, not only via `llms.txt` and `sitemap.xml`.
+- The homepage exposes the full markdown set in both the head and footer.
+
+Decisions made:
+- Kept the discovery block compact and text-only rather than adding a larger content archive section.
+
+Known issues:
+- Unrelated local-only files remain outside this change: `img/.DS_Store`, `.ai/`, `.codex/`, `AGENTS.md`, and `GEMINI.md`.
+
+Next recommended steps:
+- Commit this follow-up and push it if the user wants it live immediately.
+
+Notes for next agent:
+- This follow-up intentionally does not rename existing article/podcast URLs or add new HTML pages; it only improves discovery from current pages.
