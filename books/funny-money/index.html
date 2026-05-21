@@ -262,7 +262,10 @@
     }
 
     .cover-art {
-      width: min(38vw, 460px);
+      width: auto;
+      height: 700px;
+      max-width: 100%;
+      max-height: calc(100vh - 160px);
       border-radius: 8px;
       box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
     }
@@ -294,6 +297,13 @@
       border-left: 4px solid #5746e3;
       padding-left: 1.25rem;
       color: #d7d7d7;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
     }
 
     .format-grid {
@@ -363,8 +373,15 @@
         max-width: 320px;
       }
 
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
       .cover-art {
-        max-width: 300px;
+        width: auto;
+        height: 520px;
+        max-width: 100%;
+        max-height: none;
       }
     }
   </style>
@@ -436,9 +453,9 @@
             <a href="#preview" class="link-fancy link-fancy-light">Read the teaser</a>
           </div>
           <div class="col-12 col-lg-5 text-center">
-            <img class="cover-art" src="../../img/books/funny-money-paperback.jpg"
-              alt="Full paperback cover artwork for Funny Money: Stablecoins, CBDCs and the Tokenization of the Global Economy"
-              width="1600" height="1121" loading="eager">
+            <img class="cover-art" src="../../img/books/funny-money-cover.jpg"
+              alt="Cover of Funny Money: Stablecoins, CBDCs and the Tokenization of the Global Economy"
+              loading="eager">
           </div>
         </div>
       </div>
@@ -468,8 +485,8 @@
 
     <section class="py-vh-5 bg-dark" id="preview" aria-labelledby="preview-heading">
       <div class="container px-vw-5">
-        <div class="row g-4">
-          <div class="col-12 col-lg-8">
+        <div class="preview-grid">
+          <div>
             <article class="book-card">
               <h2 id="preview-heading" class="h3 mb-3">Inside the Book</h2>
               <p class="text-secondary">
@@ -484,7 +501,7 @@
               </p>
             </article>
           </div>
-          <div class="col-12 col-lg-4">
+          <div>
             <aside class="book-card" aria-labelledby="best-for-heading">
               <h2 id="best-for-heading" class="h3 mb-3">Best for Readers Who Need</h2>
               <ul class="signal-list">

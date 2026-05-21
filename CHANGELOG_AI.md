@@ -691,3 +691,67 @@ Next recommended steps:
 
 Notes for next agent:
 - Do not re-add an eyebrow label above the homepage `New` heading unless the user asks for a new label there.
+
+### 2026-05-21 12:59 local — Codex
+
+Task:
+- Fix `/books/funny-money/` so the hero uses the front cover image without squeeze-prone dimensions and the preview cards sit side by side on desktop.
+
+Selected agent team:
+- engineering-frontend-developer: correct the dedicated book page image and desktop layout.
+- testing-accessibility-auditor: preserve alt text and mobile stacking.
+- engineering-git-workflow-master: verify, commit, and push the targeted correction.
+
+Changes made:
+- Replaced the dedicated page hero image source from the paperback spread to `../../img/books/funny-money-cover.jpg`.
+- Removed fixed HTML `width` and `height` attributes from that hero image.
+- Updated `.cover-art` CSS to use proportional front-cover sizing with a 700px desktop height and mobile fallback.
+- Replaced the Bootstrap-only preview row with `.preview-grid`, keeping "Inside the Book" and "Best for Readers Who Need" side by side on desktop and stacked on mobile.
+
+Files touched:
+- CHANGELOG_AI.md
+- books/funny-money/index.html
+
+Commands/tests run:
+
+```bash
+rg -n "cover-art|funny-money-cover|funny-money-paperback|preview-grid|Best for Readers" books/funny-money/index.html
+node -e "const fs=require('fs'); const s=fs.readFileSync('books/funny-money/index.html','utf8'); const blocks=[...s.matchAll(/<script type=\"application\/ld\+json\">([\s\S]*?)<\/script>/g)]; for (let i=0;i<blocks.length;i++) JSON.parse(blocks[i][1]); console.log('books/funny-money/index.html', blocks.length, 'jsonld ok');"
+git diff --check
+python3 -m http.server 8080
+curl -s -o /dev/null -w '%{http_code} %{content_type}\n' http://127.0.0.1:8080/books/funny-money/
+python3 - <<'PY'
+from pathlib import Path
+s=Path('books/funny-money/index.html').read_text()
+assert 'src="../../img/books/funny-money-cover.jpg"' in s
+assert 'src="../../img/books/funny-money-paperback.jpg"' not in s
+assert '<div class="preview-grid">' in s
+assert 'grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);' in s
+print('dedicated page cover and preview grid assertions ok')
+PY
+'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --disable-background-networking --disable-component-update --no-first-run --user-data-dir=/tmp/tb-chrome-funnyfix --screenshot=/tmp/tb-funny-money-fix-desktop.png --window-size=1440,1800 http://127.0.0.1:8080/books/funny-money/
+git add CHANGELOG_AI.md books/funny-money/index.html
+git commit -m "Fix Funny Money page layout"
+git push origin main
+```
+
+Results:
+- Dedicated book page JSON-LD still parses.
+- `git diff --check` reports no whitespace errors.
+- Local `/books/funny-money/` returns `200 text/html`.
+- Assertions confirm the hero uses the front cover, the paperback spread is no longer used on that page, and `.preview-grid` is present.
+- Desktop screenshot confirmed the hero now shows the proportional front cover rather than the spread.
+
+Decisions made:
+- Matched the earlier front-cover treatment by avoiding HTML `width`/`height` on the dedicated page hero image.
+- Kept the paperback spread available as an asset for other contexts, but removed it from this dedicated page.
+
+Known issues:
+- `Covers/` remains ignored/untracked local source artwork.
+- The local Chrome preview-anchor screenshot attempt produced a blank image, so preview grid validation used source assertions rather than that screenshot.
+
+Next recommended steps:
+- Verify the live `/books/funny-money/` page after deployment picks up the pushed commit.
+
+Notes for next agent:
+- Keep `/books/funny-money/` hero art as `funny-money-cover.jpg`; do not swap the paperback spread back into that hero slot.
