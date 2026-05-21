@@ -1,2 +1,9 @@
 .DS_Store
 /node_modules
+/.ai
+/.codex
+AGENTS.md
+GEMINI.md
+img/.DS_Store
+img/.DS_Store
+img/.DS_Store
