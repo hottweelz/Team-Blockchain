@@ -29,6 +29,10 @@
     href="https://www.teamblockchain.net/brand.md">
   <link rel="alternate" type="text/markdown" title="Digital Bytes Product Information"
     href="https://www.teamblockchain.net/product.md">
+  <link rel="alternate" type="text/markdown" title="Digital Bytes Books"
+    href="https://www.teamblockchain.net/books.md">
+  <link rel="alternate" type="text/markdown" title="Funny Money Book Information"
+    href="https://www.teamblockchain.net/books/funny-money.md">
   <link rel="alternate" type="text/markdown" title="Bitcoin Portfolio Diversification"
     href="https://www.teamblockchain.net/articles/bitcoin-portfolio-diversification.md">
   <link rel="alternate" type="text/markdown" title="Crypto Regulatory Landscape"
@@ -586,6 +590,25 @@
     .faq-item p {
       line-height: 1.7;
     }
+
+    .hero-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .hero-feature-grid .cta-box {
+      height: 100%;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 991px) {
+      .hero-feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -610,6 +633,9 @@
       <!-- Collapsible Navigation -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/books" aria-label="Digital Bytes books">Books</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#newsletter" aria-label="Newsletter section">Newsletter</a>
           </li>
@@ -667,8 +693,17 @@
                 crunchbase.com/organization/team-blockchain, twitter.com/teamblockchain.</p>
             </details>
 
-            <div class="row g-4 mt-5">
-              <div class="col-md-6">
+            <div class="hero-feature-grid mt-5">
+              <div>
+                <article class="cta-box">
+                  <div class="feature-icon mx-auto" role="img" aria-label="Book icon">B</div>
+                  <h2 class="h4 mb-3">Books</h2>
+                  <p class="text-secondary mb-4">Read the new Digital Bytes book on stablecoins and tokenization</p>
+                  <a href="/books" class="btn-primary-custom" aria-label="View Digital Bytes books">View
+                    Books</a>
+                </article>
+              </div>
+              <div>
                 <article class="cta-box">
                   <div class="feature-icon mx-auto" role="img" aria-label="Newsletter icon">📰</div>
                   <h2 class="h4 mb-3">Newsletter</h2>
@@ -677,7 +712,7 @@
                     Articles</a>
                 </article>
               </div>
-              <div class="col-md-6">
+              <div>
                 <article class="cta-box">
                   <div class="feature-icon mx-auto" role="img" aria-label="Podcast icon">🎙️</div>
                   <h2 class="h4 mb-3">Podcast</h2>
@@ -685,6 +720,38 @@
                   <a href="#podcast" class="btn-primary-custom" aria-label="Listen to Podcast Episodes">Listen Now</a>
                 </article>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Launch Section -->
+    <section class="py-vh-5 bg-dark" id="books" aria-labelledby="books-heading">
+      <div class="container px-vw-5">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-5 text-center">
+            <img src="img/books/funny-money-cover.jpg"
+              alt="Cover of Funny Money: Stablecoins, CBDCs and the Tokenization of the Global Economy"
+              class="img-fluid shadow-lg" width="937" height="1400" loading="lazy"
+              style="max-width: 360px; border-radius: 8px;">
+          </div>
+          <div class="col-12 col-lg-7">
+            <span class="h5 text-secondary fw-lighter">Digital Bytes Book</span>
+            <h2 id="books-heading" class="section-title display-4 mt-3 mb-4">New</h2>
+            <p class="lead text-secondary mb-4">
+              <strong>Funny Money: Stablecoins, CBDCs and the Tokenization of the Global Economy</strong> by Jonny Fry
+              and James Tylee is now available in eBook, paperback, and hardcover.
+            </p>
+            <p class="text-secondary mb-4">
+              The book turns years of Digital Bytes research and podcast conversations into a practical guide to digital
+              money, stablecoins, CBDCs, tokenized deposits, cross-border payments, and the financial infrastructure
+              shift now moving from specialist debate into boardroom reality.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 align-items-sm-center">
+              <a href="/books/funny-money#buy-editions"
+                class="btn-primary-custom" aria-label="Choose a Funny Money edition">Choose an Edition</a>
+              <a href="/books/funny-money" class="link-fancy link-fancy-light">Read the book brief</a>
             </div>
           </div>
         </div>
@@ -1058,6 +1125,7 @@
               <ul class="list-unstyled">
                 <li class="mb-2"><a href="#newsletter" class="link-fancy link-fancy-light">Blockchain Newsletter</a>
                 </li>
+                <li class="mb-2"><a href="/books" class="link-fancy link-fancy-light">Digital Bytes Books</a></li>
                 <li class="mb-2"><a href="#podcast" class="link-fancy link-fancy-light">Blockchain Podcast</a></li>
                 <li class="mb-2"><a href="#about" class="link-fancy link-fancy-light">Expert Team</a></li>
                 <li class="mb-2"><a href="https://digitalbytes.substack.com/archive" target="_blank"
@@ -1117,6 +1185,8 @@
               Machine-readable resources:
               <a href="https://www.teamblockchain.net/brand.md" class="link-fancy link-fancy-light">Brand</a> |
               <a href="https://www.teamblockchain.net/product.md" class="link-fancy link-fancy-light">Product</a> |
+              <a href="https://www.teamblockchain.net/books.md" class="link-fancy link-fancy-light">Books</a> |
+              <a href="https://www.teamblockchain.net/books/funny-money.md" class="link-fancy link-fancy-light">Funny Money</a> |
               <a href="https://www.teamblockchain.net/articles/bitcoin-portfolio-diversification.md" class="link-fancy link-fancy-light">Article 1</a> |
               <a href="https://www.teamblockchain.net/articles/crypto-regulatory-landscape.md" class="link-fancy link-fancy-light">Article 2</a> |
               <a href="https://www.teamblockchain.net/articles/defi-protocols-guide.md" class="link-fancy link-fancy-light">Article 3</a> |

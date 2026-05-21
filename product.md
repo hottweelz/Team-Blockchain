@@ -3,7 +3,7 @@ title: "Digital Bytes - Product Information"
 description: "Digital Bytes is a weekly blockchain and digital assets newsletter and podcast providing expert analysis, regulatory updates, and industry trends."
 author: "TeamBlockchain"
 datePublished: "2026-04-04"
-dateModified: "2026-04-07"
+dateModified: "2026-05-21"
 version: "1.0"
 sameAs:
   - "https://digitalbytes.substack.com/"
@@ -39,6 +39,16 @@ sameAs:
 - Platforms: Spotify, Cyber.FM radio
 - Topics: Blockchain technology, cryptocurrency markets, DeFi, Web3 innovations
 
+**Books**
+- Catalogue: https://www.teamblockchain.net/books
+- Current title: *Funny Money: Stablecoins, CBDCs and the Tokenization of the Global Economy*
+- Authors: Jonny Fry and James Tylee
+- Formats: eBook, paperback, hardcover
+- eBook: https://amzn.to/49aMmUf
+- Paperback: https://amzn.to/4urBJ89
+- Hardcover: https://amzn.to/4wIP4dM
+- Machine-readable brief: https://www.teamblockchain.net/books/funny-money.md
+
 ## Core Value Propositions
 
 ### 1. Expert Analysis
@@ -65,6 +75,11 @@ sameAs:
 - Premium subscription options for exclusive access
 - Available globally via Substack and major podcast platforms
 - Multiple consumption formats (reading and listening)
+
+### 5. Long-Form Reference
+- Digital Bytes books turn weekly analysis and podcast conversations into permanent research volumes
+- Current book coverage includes stablecoins, CBDCs, tokenized deposits, tokenization, cross-border payments, and financial infrastructure
+- Dedicated book pages include retailer links, schema markup, and machine-readable summaries for search engines and AI assistants
 
 ## Target Audience
 
@@ -143,6 +158,22 @@ sameAs:
 - Direct expert access for subscribers
 - Enhanced features on Substack
 
+## Books
+
+### Funny Money
+
+**Funny Money: Stablecoins, CBDCs and the Tokenization of the Global Economy** is a Digital Bytes book by Jonny Fry and
+James Tylee. It explains how stablecoins, central bank digital currencies, tokenized deposits, and tokenized assets are
+reshaping settlement, collateral, cross-border payments, sanctions, compliance, and financial sovereignty.
+
+- Book page: https://www.teamblockchain.net/books/funny-money
+- Amazon eBook: https://amzn.to/49aMmUf
+- Amazon paperback: https://amzn.to/4urBJ89
+- Amazon hardcover: https://amzn.to/4wIP4dM
+- Formats: eBook, paperback, hardcover
+- ISBN: 9781066612024
+- Publisher: TeamBlockchain Ltd
+
 ## Contact & Engagement
 
 - **Email**: info@teamblockchain.net
@@ -154,7 +185,7 @@ sameAs:
 
 ## Updates & Freshness
 
-- **Last Updated**: April 7, 2026
+- **Last Updated**: May 21, 2026
 - **Update Frequency**: Weekly (aligned with publication schedule)
 - **Next Content**: Substack and podcast updates every week
 

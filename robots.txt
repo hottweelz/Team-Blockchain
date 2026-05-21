@@ -21,9 +21,11 @@ Allow: /css/
 Allow: /img/
 Allow: /articles/
 Allow: /podcast/
+Allow: /books/
 Allow: llms.txt
 Allow: product.md
 Allow: product.html
+Allow: books.md
 Allow: brand.md
 
 # Disallow crawling of unnecessary files
