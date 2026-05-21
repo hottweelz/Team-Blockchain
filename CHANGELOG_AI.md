@@ -644,3 +644,50 @@ Next recommended steps:
 
 Notes for next agent:
 - Do not stage `Digital_Bytes_VOL1_MANUSCRIPT.md` or `_vol1_src_*.md`; they are local source manuscripts, not public site assets.
+
+### 2026-05-21 12:52 local — Codex
+
+Task:
+- Remove the "Digital Bytes Book" eyebrow from the homepage book launch section so the section only says "New" above the book copy.
+
+Selected agent team:
+- engineering-minimal-change-engineer: make only the requested homepage copy cleanup.
+- engineering-git-workflow-master: commit and push the targeted fix.
+
+Changes made:
+- Removed the `Digital Bytes Book` span from the homepage book launch section.
+- Removed the extra top-margin class from the `New` heading now that it no longer follows an eyebrow label.
+
+Files touched:
+- CHANGELOG_AI.md
+- index.html
+
+Commands/tests run:
+
+```bash
+rg -n "Digital Bytes Book|books-heading|Book Launch Section" index.html
+node -e "const fs=require('fs'); const s=fs.readFileSync('index.html','utf8'); const blocks=[...s.matchAll(/<script type=\"application\/ld\+json\">([\s\S]*?)<\/script>/g)]; for (let i=0;i<blocks.length;i++) JSON.parse(blocks[i][1]); console.log('index.html', blocks.length, 'jsonld ok');"
+git diff --check
+git diff -- index.html
+git add CHANGELOG_AI.md index.html
+git commit -m "Simplify homepage book label"
+git push origin main
+```
+
+Results:
+- The homepage book launch section now has `New` as the only small/heading label before the book description.
+- Homepage JSON-LD still parses successfully.
+- `git diff --check` reports no whitespace errors.
+
+Decisions made:
+- Left other uses of "Digital Bytes Books" intact in discovery/footer contexts because the request targeted the homepage book promo section only.
+
+Known issues:
+- `img/.DS_Store` remains locally modified.
+- `Covers/` remains untracked.
+
+Next recommended steps:
+- Verify the deployed homepage once the hosting platform updates from `origin/main`.
+
+Notes for next agent:
+- Do not re-add an eyebrow label above the homepage `New` heading unless the user asks for a new label there.
