@@ -599,3 +599,48 @@ Next recommended steps:
 
 Notes for next agent:
 - The commit intentionally includes the public HTML/Markdown/discovery files and `img/books/` web images only, not the manuscript or source cover bundle.
+
+### 2026-05-21 12:45 local — Codex
+
+Task:
+- Add local book manuscript/source Markdown files to `.gitignore`.
+
+Selected agent team:
+- engineering-minimal-change-engineer: keep the change scoped to manuscript ignore rules.
+- engineering-git-workflow-master: verify ignored status before committing.
+
+Changes made:
+- Added ignore rules for `Digital_Bytes_VOL1_MANUSCRIPT.md` and `_vol1_src_*.md`.
+
+Files touched:
+- .gitignore
+- CHANGELOG_AI.md
+
+Commands/tests run:
+
+```bash
+git status --short --ignored
+git check-ignore -v Digital_Bytes_VOL1_MANUSCRIPT.md _vol1_src_hardcover.md
+git diff --check
+git add .gitignore CHANGELOG_AI.md
+git commit -m "Ignore local book manuscripts"
+git push origin main
+```
+
+Results:
+- `Digital_Bytes_VOL1_MANUSCRIPT.md` is ignored by the exact filename rule.
+- `_vol1_src_hardcover.md` is ignored by the `_vol1_src_*.md` pattern.
+
+Decisions made:
+- Left `Covers/` unignored because this request specifically targeted manuscript/source Markdown files.
+- Left existing local `img/.DS_Store` untouched.
+
+Known issues:
+- `Covers/` remains untracked and visible in `git status`.
+- `img/.DS_Store` remains locally modified.
+
+Next recommended steps:
+- If source cover PDFs/JPGs should also remain private, add a separate explicit ignore rule for `Covers/`.
+
+Notes for next agent:
+- Do not stage `Digital_Bytes_VOL1_MANUSCRIPT.md` or `_vol1_src_*.md`; they are local source manuscripts, not public site assets.
